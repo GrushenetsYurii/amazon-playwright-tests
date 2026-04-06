@@ -32,7 +32,7 @@ export default defineConfig({
     trace: 'on',
 
     /* Headless mode off so you can see what's happening and solve CAPTCHAs if they appear */
-    headless: false,
+    headless: process.env.CI ? true : false,
     viewport: { width: 1920, height: 1200 },
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
