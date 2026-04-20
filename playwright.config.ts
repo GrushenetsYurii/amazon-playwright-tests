@@ -7,7 +7,7 @@ export default defineConfig({
   testDir: './tests',
   
   /* Disable parallel execution to avoid Amazon anti-bot detection */
-  fullyParallel: false,
+  fullyParallel: true,
   
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
