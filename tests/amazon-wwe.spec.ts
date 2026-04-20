@@ -10,6 +10,7 @@ test('should search for WWE 2K26 Digital Code and add to cart', async ({ page })
 
   await test.step('Navigate to Amazon.com', async () => {
     await homePage.navigate('/');
+    await homePage.handleBotCheck();
   });
 
   await test.step('Handle International Shipping Alert', async () => {
