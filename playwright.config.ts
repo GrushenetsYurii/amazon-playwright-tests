@@ -18,7 +18,7 @@ export default defineConfig({
   /* * IMPORTANT: Set workers to 1. 
    * Amazon blocks multiple simultaneous requests from the same IP.
    */
-  workers: 1, 
+  workers: 4, 
   
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
