@@ -25,3 +25,14 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+    - name: Send Slack notification with test results
+      uses: slackapi/slack-github-action@v3.0.3
+      with:
+        method: chat.postMessage
+        token: ${{ secrets.SLACK_BOT_TOKEN }}
+        payload: |
+          {
+            "channel": "D04CCK0TKNE",
+            "text": "test completed"
+          }
+      if: always()
