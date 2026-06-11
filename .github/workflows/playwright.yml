@@ -33,7 +33,7 @@ jobs:
         errors: true
         payload: |
           {
-            "channel": "D04CCK0TKNE",
+            "channel": "U04C9LLHL69",
             "text": "test completed"
           }
       if: always()
