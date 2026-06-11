@@ -17,11 +17,116 @@ jobs:
         node-version: lts/*
     - name: Install dependencies
       run: npm ci
+
     - name: Run Playwright tests
-      run: npx playwright test
+      run: npx playwright test --reporter=html,json
+      env:
+        PLAYWRIGHT_JSON_OUTPUT_NAME: report.json
+      continue-on-error: true
+
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+
+    - name: Extract Test Results & Prepare Variables
+      if: always()
+      shell: bash
+      run: |
+        node -e "
+        const fs = require('fs');
+        try {
+          if (!fs.existsSync('report.json')) {
+            console.log('report.json not found');
+            process.exit(0);
+          }
+          const report = JSON.parse(fs.readFileSync('report.json', 'utf8'));
+          const stats = report.stats;
+          
+          // Коректний мапінг ключів під специфікацію Playwright:
+          const passed = stats.expected || 0;
+          const failed = stats.unexpected || 0;
+          const flaky = stats.flaky || 0;
+          const skipped = stats.skipped || 0;
+          const total = passed + failed + flaky + skipped;
+          
+          const failedTitles = [];
+          const walk = (suite) => {
+            if (suite.specs) {
+              suite.specs.forEach(spec => {
+                const hasFailure = spec.tests.some(t => t.results && t.results.some(r => r.status === 'failed' || r.status === 'timedOut'));
+                if (hasFailure) failedTitles.push(spec.title);
+              });
+            }
+            if (suite.suites) suite.suites.forEach(walk);
+          };
+          if (report.suites) report.suites.forEach(walk);
+          
+          const failedNames = failedTitles.length > 0 ? failedTitles.slice(0, 5).join(', ') : 'None';
+          
+          fs.appendFileSync(process.env.GITHUB_ENV, 'TOTAL_TESTS=' + total + '\n');
+          fs.appendFileSync(process.env.GITHUB_ENV, 'PASSED_TESTS=' + passed + '\n');
+          fs.appendFileSync(process.env.GITHUB_ENV, 'FAILED_TESTS=' + failed + '\n');
+          fs.appendFileSync(process.env.GITHUB_ENV, 'SKIPPED_TESTS=' + skipped + '\n');
+          fs.appendFileSync(process.env.GITHUB_ENV, 'FAILED_NAMES=' + failedNames + '\n');
+        } catch (e) {
+          console.error('Parsing failed:', e.message);
+        }
+        "
+
+    - name: Send Slack notification with test results
+      uses: slackapi/slack-github-action@v3.0.3
+      with:
+        method: chat.postMessage
+        token: ${{ secrets.SLACK_BOT_TOKEN }}
+        errors: true
+        payload: |
+          {
+            "channel": "U04C9LLHL69",
+            "attachments": [
+              {
+                "color": "${{ env.FAILED_TESTS != '0' && '#a30200' || '#2eb886' }}",
+                "blocks": [
+                  {
+                    "type": "header",
+                    "text": {
+                      "type": "plain_text",
+                      "text": "${{ env.FAILED_TESTS != '0' && '❌ Playwright Tests Failed' || '✅ Playwright Tests Passed' }}",
+                      "emoji": true
+                    }
+                  },
+                  {
+                    "type": "section",
+                    "text": {
+                      "type": "mrkdwn",
+                      "text": "*Repository:* ${{ github.repository }}\n*Branch:* `${{ github.ref_name }}`"
+                    }
+                  },
+                  {
+                    "type": "section",
+                    "text": {
+                      "type": "mrkdwn",
+                      "text": "*Results:*\n• Total: `${{ env.TOTAL_TESTS }}`\n• Passed: `${{ env.PASSED_TESTS }}`\n• Failed: `${{ env.FAILED_TESTS }}`\n• Skipped: `${{ env.SKIPPED_TESTS }}`"
+                    }
+                  },
+                  {
+                    "type": "section",
+                    "text": {
+                      "type": "mrkdwn",
+                      "text": "*Failed Tests:* `${{ env.FAILED_NAMES }}`"
+                    }
+                  },
+                  {
+                    "type": "section",
+                    "text": {
+                      "type": "mrkdwn",
+                      "text": "<https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Workflow Run>"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+      if: always()
