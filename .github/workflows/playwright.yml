@@ -30,6 +30,7 @@ jobs:
       with:
         method: chat.postMessage
         token: ${{ secrets.SLACK_BOT_TOKEN }}
+        errors: true
         payload: |
           {
             "channel": "D04CCK0TKNE",
