@@ -45,10 +45,12 @@ jobs:
           const report = JSON.parse(fs.readFileSync('report.json', 'utf8'));
           const stats = report.stats;
           
-          const total = stats.tests || 0;
-          const passed = stats.passes || 0;
-          const failed = stats.failures || 0;
+          // Коректний мапінг ключів під специфікацію Playwright:
+          const passed = stats.expected || 0;
+          const failed = stats.unexpected || 0;
+          const flaky = stats.flaky || 0;
           const skipped = stats.skipped || 0;
+          const total = passed + failed + flaky + skipped;
           
           const failedTitles = [];
           const walk = (suite) => {
