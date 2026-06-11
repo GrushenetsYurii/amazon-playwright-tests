@@ -45,7 +45,6 @@ jobs:
           const report = JSON.parse(fs.readFileSync('report.json', 'utf8'));
           const stats = report.stats;
           
-          // Коректний мапінг ключів під специфікацію Playwright:
           const passed = stats.expected || 0;
           const failed = stats.unexpected || 0;
           const flaky = stats.flaky || 0;
@@ -84,7 +83,7 @@ jobs:
         errors: true
         payload: |
           {
-            "channel": "U04C9LLHL69",
+            "channel": "U05PS4AUYLA",
             "attachments": [
               {
                 "color": "${{ env.FAILED_TESTS != '0' && '#a30200' || '#2eb886' }}",
