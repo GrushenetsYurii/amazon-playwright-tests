@@ -38,6 +38,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./playwright-report
         destination_dir: ${{ github.run_id }}
+        keep_files: true
         
     - name: Set Report URL
       if: always()
@@ -137,7 +138,7 @@ jobs:
                     "type": "section",
                     "text": {
                       "type": "mrkdwn",
-                      "text": "🌐 <${{ env.REPORT_URL }}|Відкрити HTML звіт>"
+                      "text": "🌐 <${{ env.REPORT_URL }}|Open HTML Report>"
                     }
                   },
                   {
