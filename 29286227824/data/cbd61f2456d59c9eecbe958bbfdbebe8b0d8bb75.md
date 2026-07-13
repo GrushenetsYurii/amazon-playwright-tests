@@ -1,0 +1,1444 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: amazon-wwe.spec.ts >> should search for WWE 2K26 Digital Code and add to cart
+- Location: tests/amazon-wwe.spec.ts:6:5
+
+# Error details
+
+```
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: false
+Received: true
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - navigation "Shortcuts menu" [ref=e3]:
+    - heading "Skip to" [level=2] [ref=e4]
+    - list "Skip to" [ref=e5]:
+      - listitem [ref=e6]:
+        - link "main content" [ref=e7] [cursor=pointer]:
+          - /url: "#skippedLink"
+          - text: Main content
+    - separator [ref=e8]
+    - heading "Keyboard shortcuts" [level=2] [ref=e9]
+    - list "Keyboard shortcuts" [ref=e10]:
+      - listitem [ref=e11]:
+        - link "Search, alt, forward slash" [ref=e12] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e13]:
+            - generic [ref=e14]: Search
+            - generic [ref=e15]:
+              - generic [ref=e16]: alt
+              - generic [ref=e17]: +
+              - generic [ref=e18]: /
+      - listitem [ref=e19]:
+        - link "Cart, shift, alt, c" [ref=e20] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e21]:
+            - generic [ref=e22]: Cart
+            - generic [ref=e23]:
+              - generic [ref=e24]: shift
+              - generic [ref=e25]: +
+              - generic [ref=e26]: alt
+              - generic [ref=e27]: +
+              - generic [ref=e28]: C
+      - listitem [ref=e29]:
+        - link "Home, shift, alt, h" [ref=e30] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e31]:
+            - generic [ref=e32]: Home
+            - generic [ref=e33]:
+              - generic [ref=e34]: shift
+              - generic [ref=e35]: +
+              - generic [ref=e36]: alt
+              - generic [ref=e37]: +
+              - generic [ref=e38]: H
+      - listitem [ref=e39]:
+        - link "Your orders, shift, alt, o" [ref=e40] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e41]:
+            - generic [ref=e42]: Orders
+            - generic [ref=e43]:
+              - generic [ref=e44]: shift
+              - generic [ref=e45]: +
+              - generic [ref=e46]: alt
+              - generic [ref=e47]: +
+              - generic [ref=e48]: O
+      - listitem [ref=e49]:
+        - button "Show/hide shortcuts, shift, alt, z" [ref=e50] [cursor=pointer]:
+          - generic [ref=e51]:
+            - generic [ref=e52]: Show/Hide shortcuts
+            - generic [ref=e53]:
+              - generic [ref=e54]: shift
+              - generic [ref=e55]: +
+              - generic [ref=e56]: alt
+              - generic [ref=e57]: +
+              - generic [ref=e58]: Z
+    - generic [ref=e64]: To move between items, use your keyboard's up or down arrows.
+  - banner [ref=e65]:
+    - navigation "Primary" [ref=e66]:
+      - generic [ref=e67]:
+        - generic [ref=e68]:
+          - link "Amazon" [ref=e70] [cursor=pointer]:
+            - /url: /ref=nav_logo
+          - button "Delivering to Des Moines 50307 Update location" [ref=e73] [cursor=pointer]:
+            - generic [ref=e75]:
+              - generic [ref=e76]: Delivering to Des Moines 50307
+              - generic [ref=e77]: Update location
+        - search [ref=e80]:
+          - generic [ref=e83]:
+            - generic [ref=e85]: All
+            - combobox "Select the department you want to search in" [ref=e87] [cursor=pointer]:
+              - option "All Departments" [selected]
+              - option "Alexa Skills"
+              - option "Amazon Autos"
+              - option "Amazon Devices"
+              - option "Amazon Global Store"
+              - option "Amazon Haul"
+              - option "Amazon One Medical"
+              - option "Amazon Pharmacy"
+              - option "Amazon Resale"
+              - option "Appliances"
+              - option "Apps & Games"
+              - option "Arts, Crafts & Sewing"
+              - option "Audible Books & Originals"
+              - option "Automotive Parts & Accessories"
+              - option "Baby"
+              - option "Beauty & Personal Care"
+              - option "Books"
+              - option "CDs & Vinyl"
+              - option "Cell Phones & Accessories"
+              - option "Clothing, Shoes & Jewelry"
+              - option "Women's Clothing, Shoes & Jewelry"
+              - option "Men's Clothing, Shoes & Jewelry"
+              - option "Girl's Clothing, Shoes & Jewelry"
+              - option "Boy's Clothing, Shoes & Jewelry"
+              - option "Baby Clothing, Shoes & Jewelry"
+              - option "Collectibles & Fine Art"
+              - option "Computers"
+              - option "Credit and Payment Cards"
+              - option "Digital Music"
+              - option "Electronics"
+              - option "Garden & Outdoor"
+              - option "Gift Cards"
+              - option "Grocery & Gourmet Food"
+              - option "Handmade"
+              - option "Health, Household & Baby Care"
+              - option "Home & Business Services"
+              - option "Home & Kitchen"
+              - option "Industrial & Scientific"
+              - option "Just for Prime"
+              - option "Kindle Store"
+              - option "Luggage & Travel Gear"
+              - option "Luxury Stores"
+              - option "Magazine Subscriptions"
+              - option "Movies & TV"
+              - option "Musical Instruments"
+              - option "Office Products"
+              - option "Pet Supplies"
+              - option "Premium Beauty"
+              - option "Prime Video"
+              - option "Smart Home"
+              - option "Software"
+              - option "Sports & Outdoors"
+              - option "Subscribe & Save"
+              - option "Subscription Boxes"
+              - option "Tools & Home Improvement"
+              - option "Toys & Games"
+              - option "Under $10"
+              - option "Video Games"
+              - option "Vons"
+              - option "Whole Foods Market"
+          - searchbox "Search Amazon" [ref=e90]
+          - generic [ref=e91]:
+            - generic "Go" [ref=e93] [cursor=pointer]:
+              - button "Go" [ref=e94]
+            - button [ref=e96]: Agent Search
+        - generic [ref=e98]:
+          - generic [ref=e99]:
+            - link "Choose a language for shopping in Amazon United States. The current selection is English (EN)." [ref=e100] [cursor=pointer]:
+              - /url: /customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=topnav_lang
+              - generic [ref=e103]:
+                - img "United States" [ref=e104]
+                - generic [ref=e105]: EN
+            - button "Expand to Change Language or Country" [ref=e106] [cursor=pointer]
+          - generic [ref=e107]:
+            - link "Hello, sign in Account & Lists" [ref=e108] [cursor=pointer]:
+              - /url: https://www.amazon.com/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fcart%2Fadd-to-cart%2Fref%3Dnav_ya_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0
+              - generic [ref=e110]: Hello, sign in
+              - generic [ref=e111]: Account & Lists
+            - button "Expand Account and Lists" [ref=e112] [cursor=pointer]
+          - link "Returns & Orders" [ref=e113] [cursor=pointer]:
+            - /url: /gp/css/order-history?ref_=nav_orders_first
+            - generic [ref=e114]: Returns
+            - generic [ref=e115]: "& Orders"
+          - link "1 item in cart" [ref=e116] [cursor=pointer]:
+            - /url: /gp/cart/view.html?ref_=nav_cart
+            - generic [ref=e118]: "1"
+            - generic [ref=e121]: Cart
+      - generic [ref=e123]:
+        - button "Open All Categories Menu" [ref=e125] [cursor=pointer]:
+          - generic [ref=e127]: All
+        - list [ref=e131]:
+          - listitem [ref=e132]:
+            - link "Health AI" [ref=e134] [cursor=pointer]:
+              - /url: https://health.amazon.com/health-ai?ref_=nav_cs_health_ai
+          - listitem [ref=e135]:
+            - link "Amazon Haul" [ref=e137] [cursor=pointer]:
+              - /url: /haul/store?ref_=nav_cs_hul_disb
+          - listitem [ref=e138]:
+            - generic [ref=e139]:
+              - link "Medical Care" [ref=e140] [cursor=pointer]:
+                - /url: https://health.amazon.com/?ref_=nav_cs_medical_care_health_home
+              - button "Medical Care Details" [ref=e141] [cursor=pointer]
+          - listitem [ref=e142]:
+            - link "Amazon Basics" [ref=e144] [cursor=pointer]:
+              - /url: /Amazon_Basics?channel=discovbar&field-lbr_brands_browse-bin=AmazonBasics&ref_=nav_cs_amazonbasics
+          - listitem [ref=e145]:
+            - link "Best Sellers" [ref=e147] [cursor=pointer]:
+              - /url: /gp/bestsellers/?ref_=nav_cs_bestsellers
+          - listitem [ref=e148]:
+            - generic [ref=e149]:
+              - link "Prime" [ref=e150] [cursor=pointer]:
+                - /url: /prime?ref_=nav_cs_primelink_nonmember
+              - button "Prime Details" [ref=e151] [cursor=pointer]
+          - listitem [ref=e152]:
+            - link "Today's Deals" [ref=e154] [cursor=pointer]:
+              - /url: /deals?ref_=nav_cs_gb
+          - listitem [ref=e155]:
+            - link "New Releases" [ref=e157] [cursor=pointer]:
+              - /url: /gp/new-releases/?ref_=nav_cs_newreleases
+          - listitem [ref=e158]:
+            - link "Books" [ref=e160] [cursor=pointer]:
+              - /url: /books-used-books-textbooks/b/?ie=UTF8&node=283155&ref_=nav_cs_books
+          - listitem [ref=e161]:
+            - generic [ref=e162]:
+              - link "Groceries" [ref=e163] [cursor=pointer]:
+                - /url: /fmc/learn-more?ref_=nav_cs_groceries
+              - button "Groceries Details" [ref=e164] [cursor=pointer]
+          - listitem [ref=e165]:
+            - link "Whole Foods" [ref=e167] [cursor=pointer]:
+              - /url: /alm/storefront?almBrandId=VUZHIFdob2xlIEZvb2Rz&ref_=nav_cs_whole_foods
+          - listitem [ref=e168]:
+            - generic [ref=e169]:
+              - link "Gift Cards" [ref=e170] [cursor=pointer]:
+                - /url: /gift-cards/b/?ie=UTF8&node=2238192011&ref_=nav_cs_gc
+              - button "Gift Cards Details" [ref=e171] [cursor=pointer]
+          - listitem [ref=e172]:
+            - link "Sell" [ref=e174] [cursor=pointer]:
+              - /url: /b/?_encoding=UTF8&ld=AZUSSOA-sell&node=12766669011&ref_=nav_cs_sell
+          - listitem [ref=e175]:
+            - link "Music" [ref=e177] [cursor=pointer]:
+              - /url: /music/player?ref_=nav_cs_music
+          - listitem [ref=e178]:
+            - link "Registry" [ref=e180] [cursor=pointer]:
+              - /url: /gp/browse.html?node=16115931011&ref_=nav_cs_registry
+          - listitem [ref=e181]:
+            - link "Fashion" [ref=e183] [cursor=pointer]:
+              - /url: /amazon-fashion/b/?ie=UTF8&node=7141123011&ref_=nav_cs_fashion
+          - listitem [ref=e184]:
+            - generic [ref=e185]:
+              - link "Amazon Home" [ref=e186] [cursor=pointer]:
+                - /url: /home-garden-kitchen-furniture-bedding/b/?ie=UTF8&node=1055398&ref_=nav_cs_home
+              - button "Amazon Home Details" [ref=e187] [cursor=pointer]
+          - listitem [ref=e188]:
+            - link "Automotive" [ref=e190] [cursor=pointer]:
+              - /url: /automotive-auto-truck-replacements-parts/b/?ie=UTF8&node=15684181&ref_=nav_cs_automotive
+          - listitem [ref=e191]:
+            - link "Toys & Games" [ref=e193] [cursor=pointer]:
+              - /url: /toys/b/?ie=UTF8&node=165793011&ref_=nav_cs_toys
+          - listitem [ref=e194]:
+            - generic [ref=e195]:
+              - link "Home Improvement" [ref=e196] [cursor=pointer]:
+                - /url: /Tools-and-Home-Improvement/b/?ie=UTF8&node=228013&ref_=nav_cs_hi
+              - button "Home Improvement Details" [ref=e197] [cursor=pointer]
+          - listitem [ref=e198]:
+            - link "Sports & Outdoors" [ref=e200] [cursor=pointer]:
+              - /url: /sports-outdoors/b/?ie=UTF8&node=3375251&ref_=nav_cs_sports
+          - listitem [ref=e201]:
+            - link "Baby" [ref=e203] [cursor=pointer]:
+              - /url: /baby-car-seats-strollers-bedding/b/?ie=UTF8&node=165796011&ref_=nav_cs_baby
+          - listitem [ref=e204]:
+            - link "Smart Home" [ref=e206] [cursor=pointer]:
+              - /url: /Smart-Home/b/?ie=UTF8&node=6563140011&ref_=nav_cs_smart_home
+          - listitem [ref=e207]:
+            - link "Shop By Interest" [ref=e209] [cursor=pointer]:
+              - /url: /finds?ref_=nav_cs_foundit
+          - listitem [ref=e210]:
+            - link "Pharmacy" [ref=e212] [cursor=pointer]:
+              - /url: https://pharmacy.amazon.com/?nodl=0&ref_=nav_cs_pharmacy
+          - listitem [ref=e213]:
+            - link "Kindle Books" [ref=e215] [cursor=pointer]:
+              - /url: /Kindle-eBooks/b/?ie=UTF8&node=154606011&ref_=nav_cs_kindle_books
+          - listitem [ref=e216]:
+            - link "Luxury" [ref=e218] [cursor=pointer]:
+              - /url: /luxurystores?ref_=nav_cs_luxury_disc
+          - listitem [ref=e219]:
+            - link "Beauty & Personal Care" [ref=e221] [cursor=pointer]:
+              - /url: /Beauty-Makeup-Skin-Hair-Products/b/?ie=UTF8&node=3760911&ref_=nav_cs_beauty
+      - dialog [ref=e224]
+  - generic [ref=e229]:
+    - generic [ref=e230]:
+      - generic [ref=e231]:
+        - link "WWE 2K26 | Standard Edition | XBOX Series X|S Digital" [ref=e234] [cursor=pointer]:
+          - /url: /gp/product/B0GMSBZPT2/ref=sw_img_1?smid=A3ODHND3J0WMC8&psc=1
+          - img "WWE 2K26 | Standard Edition | XBOX Series X|S Digital" [ref=e235]
+        - generic [ref=e236]:
+          - heading "Added to cart" [active] [level=1] [ref=e243]
+          - list [ref=e245]:
+            - listitem [ref=e246]:
+              - generic [ref=e247]: "Platform: XBOX Series X|S Digital"
+            - listitem [ref=e248]:
+              - generic [ref=e249]: "Edition: Standard"
+      - generic [ref=e251]:
+        - generic [ref=e252]:
+          - generic [ref=e253]:
+            - heading "Cart Subtotal:" [ref=e254]
+            - generic [ref=e256]:
+              - generic [ref=e257]: $69.99
+              - generic [ref=e258]:
+                - text: $
+                - generic [ref=e259]:
+                  - text: "69"
+                  - generic [ref=e260]: .
+                - text: "99"
+          - generic [ref=e265] [cursor=pointer]:
+            - button "Proceed to checkout (1 item) Check out Amazon Cart" [ref=e266]: Proceed to checkout
+            - generic [ref=e269]: Proceed to checkout (1 item)
+          - link "Go to Cart" [ref=e272] [cursor=pointer]:
+            - /url: /cart?ref_=sw_gtc
+        - generic [ref=e274]:
+          - text: For best experience
+          - link "sign in to your account" [ref=e275] [cursor=pointer]:
+            - /url: https://www.amazon.com/ap/signin/ref=sw_signin?openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fcart%3Fapp-nav-type%3Dnone%26dc%3Ddf&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0
+    - generic [ref=e276]:
+      - group [ref=e282]:
+        - generic [ref=e283]:
+          - heading "Customers who bought items in your cart also bought" [level=1] [ref=e285]
+          - generic [ref=e288]: Page 1 of 7
+        - generic [ref=e290]:
+          - button "Previous page" [ref=e292] [cursor=pointer]:
+            - generic [ref=e295]: Previous page
+          - group [ref=e297]:
+            - list [ref=e298]:
+              - listitem [ref=e299]:
+                - generic [ref=e300]:
+                  - generic [ref=e301]:
+                    - link "WWE 2K26 | Monday Night War Edition | XBOX Series X|S Digital" [ref=e302] [cursor=pointer]:
+                      - /url: /2K26-Monday-Night-XBOX-Digital/dp/B0GMTKWKYG/ref=sw_img_d_crh_rh_hashrec?_encoding=UTF8&pd_rd_i=B0GMTKWKYG&pd_rd_w=6Ne5X&content-id=amzn1.sym.dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_p=dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - img "WWE 2K26 | Monday Night War Edition | XBOX Series X|S Digital" [ref=e304]
+                    - generic [ref=e305]:
+                      - link "WWE 2K26 | Monday Night War Edition | XBOX Series X|S Digital" [ref=e306] [cursor=pointer]:
+                        - /url: /2K26-Monday-Night-XBOX-Digital/dp/B0GMTKWKYG/ref=sw_ttl_d_crh_rh_hashrec?_encoding=UTF8&pd_rd_i=B0GMTKWKYG&pd_rd_w=6Ne5X&content-id=amzn1.sym.dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_p=dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                        - generic [ref=e307]:
+                          - generic [ref=e308]: WWE 2K26 | Monday Night War Edition | XBOX Series X|S Digital
+                          - generic [ref=e309]: WWE 2K26 | Monday Night War Edition | XBOX Series X|…
+                      - link "3.7 out of 5 stars 13" [ref=e311] [cursor=pointer]:
+                        - /url: /product-reviews/B0GMTKWKYG/ref=sw_cr_d_crh_rh_hashrec?_encoding=UTF8&pd_rd_i=B0GMTKWKYG&pd_rd_w=6Ne5X&content-id=amzn1.sym.dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_p=dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                        - generic [ref=e313]: 3.7 out of 5 stars
+                        - text: "13"
+                      - generic [ref=e315]:
+                        - generic [ref=e316]: $149.99
+                        - generic [ref=e317]:
+                          - text: $
+                          - generic [ref=e318]:
+                            - text: "149"
+                            - generic [ref=e319]: .
+                          - text: "99"
+                  - generic [ref=e321]:
+                    - status [ref=e322]
+                    - generic [ref=e327] [cursor=pointer]:
+                      - button "Add to cart, WWE 2K26 | Monday Night War Edition | XBOX Series X|S Digital" [ref=e328]
+                      - generic [ref=e329]: Add to cart
+              - listitem [ref=e331]:
+                - generic [ref=e332]:
+                  - generic [ref=e333]:
+                    - link "MLB The Show 26 | Standard Edition | XBOX Series X|S Digital" [ref=e334] [cursor=pointer]:
+                      - /url: /MLB-Show-Standard-XBOX-Digital/dp/B0GQ2J6G81/ref=sw_img_d_crh_rh_hashrec_1?_encoding=UTF8&pd_rd_i=B0GQ2J6G81&pd_rd_w=6Ne5X&content-id=amzn1.sym.dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_p=dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - img "MLB The Show 26 | Standard Edition | XBOX Series X|S Digital" [ref=e336]
+                    - generic [ref=e337]:
+                      - link "MLB The Show 26 | Standard Edition | XBOX Series X|S Digital" [ref=e338] [cursor=pointer]:
+                        - /url: /MLB-Show-Standard-XBOX-Digital/dp/B0GQ2J6G81/ref=sw_ttl_d_crh_rh_hashrec_1?_encoding=UTF8&pd_rd_i=B0GQ2J6G81&pd_rd_w=6Ne5X&content-id=amzn1.sym.dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_p=dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                        - generic [ref=e339]:
+                          - generic [ref=e340]: MLB The Show 26 | Standard Edition | XBOX Series X|S Digital
+                          - generic [ref=e341]: MLB The Show 26 | Standard Edition | XBOX Series X|S Di…
+                      - link "4.4 out of 5 stars 45" [ref=e343] [cursor=pointer]:
+                        - /url: /product-reviews/B0GQ2J6G81/ref=sw_cr_d_crh_rh_hashrec_1?_encoding=UTF8&pd_rd_i=B0GQ2J6G81&pd_rd_w=6Ne5X&content-id=amzn1.sym.dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_p=dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                        - generic [ref=e345]: 4.4 out of 5 stars
+                        - text: "45"
+                      - generic [ref=e347]:
+                        - generic [ref=e348]: $69.99
+                        - generic [ref=e349]:
+                          - text: $
+                          - generic [ref=e350]:
+                            - text: "69"
+                            - generic [ref=e351]: .
+                          - text: "99"
+                  - generic [ref=e353]:
+                    - status [ref=e354]
+                    - generic [ref=e359] [cursor=pointer]:
+                      - button "Add to cart, MLB The Show 26 | Standard Edition | XBOX Series X|S Digital" [ref=e360]
+                      - generic [ref=e361]: Add to cart
+              - listitem [ref=e363]:
+                - generic [ref=e364]:
+                  - generic [ref=e365]:
+                    - link "High On Life 2 Standard - PC Steam [Online Game Code]" [ref=e366] [cursor=pointer]:
+                      - /url: /High-Life-Standard-Steam-Online/dp/B0GN4RWLGB/ref=sw_img_d_crh_rh_hashrec_2?_encoding=UTF8&pd_rd_i=B0GN4RWLGB&pd_rd_w=6Ne5X&content-id=amzn1.sym.dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_p=dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - img "High On Life 2 Standard - PC Steam [Online Game Code]" [ref=e368]
+                    - generic [ref=e369]:
+                      - link "High On Life 2 Standard - PC Steam [Online Game Code]" [ref=e370] [cursor=pointer]:
+                        - /url: /High-Life-Standard-Steam-Online/dp/B0GN4RWLGB/ref=sw_ttl_d_crh_rh_hashrec_2?_encoding=UTF8&pd_rd_i=B0GN4RWLGB&pd_rd_w=6Ne5X&content-id=amzn1.sym.dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_p=dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                        - generic [ref=e371]:
+                          - generic [ref=e372]: High On Life 2 Standard - PC Steam [Online Game Code]
+                          - generic [ref=e373]: High On Life 2 Standard - PC Steam [Online Game Code]
+                      - link "5.0 out of 5 stars 2" [ref=e375] [cursor=pointer]:
+                        - /url: /product-reviews/B0GN4RWLGB/ref=sw_cr_d_crh_rh_hashrec_2?_encoding=UTF8&pd_rd_i=B0GN4RWLGB&pd_rd_w=6Ne5X&content-id=amzn1.sym.dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_p=dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                        - generic [ref=e377]: 5.0 out of 5 stars
+                        - text: "2"
+                      - generic [ref=e379]:
+                        - generic [ref=e380]: $59.99
+                        - generic [ref=e381]:
+                          - text: $
+                          - generic [ref=e382]:
+                            - text: "59"
+                            - generic [ref=e383]: .
+                          - text: "99"
+                  - generic [ref=e385]:
+                    - status [ref=e386]
+                    - generic [ref=e391] [cursor=pointer]:
+                      - button "Add to cart, High On Life 2 Standard - PC Steam [Online Game Code]" [ref=e392]
+                      - generic [ref=e393]: Add to cart
+              - listitem [ref=e395]:
+                - generic [ref=e396]:
+                  - generic [ref=e397]:
+                    - 'link "Monster Hunter Stories 3: Twisted Reflection | Standard Edition | Xbox Series X|S Digital" [ref=e398] [cursor=pointer]':
+                      - /url: /Monster-Hunter-Stories-Reflection-Standard/dp/B0GGLWF2R3/ref=sw_img_d_crh_rh_hashrec_3?_encoding=UTF8&pd_rd_i=B0GGLWF2R3&pd_rd_w=6Ne5X&content-id=amzn1.sym.dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_p=dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - 'img "Monster Hunter Stories 3: Twisted Reflection | Standard Edition | Xbox Series X|S Digital" [ref=e400]'
+                    - generic [ref=e401]:
+                      - 'link "Monster Hunter Stories 3: Twisted Reflection | Standard Edition | Xbox Series X|S Digital" [ref=e402] [cursor=pointer]':
+                        - /url: /Monster-Hunter-Stories-Reflection-Standard/dp/B0GGLWF2R3/ref=sw_ttl_d_crh_rh_hashrec_3?_encoding=UTF8&pd_rd_i=B0GGLWF2R3&pd_rd_w=6Ne5X&content-id=amzn1.sym.dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_p=dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                        - generic [ref=e403]:
+                          - generic [ref=e404]: "Monster Hunter Stories 3: Twisted Reflection | Standard Edition | Xbox Series X|S Digital"
+                          - generic [ref=e405]: "Monster Hunter Stories 3: Twisted Reflection | Standa…"
+                      - link "3.5 out of 5 stars 3" [ref=e407] [cursor=pointer]:
+                        - /url: /product-reviews/B0GGLWF2R3/ref=sw_cr_d_crh_rh_hashrec_3?_encoding=UTF8&pd_rd_i=B0GGLWF2R3&pd_rd_w=6Ne5X&content-id=amzn1.sym.dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_p=dc2bdc90-f603-40c1-a95e-1d3d1fd58f12&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                        - generic [ref=e409]: 3.5 out of 5 stars
+                        - text: "3"
+                      - generic [ref=e411]:
+                        - generic [ref=e412]: $69.99
+                        - generic [ref=e413]:
+                          - text: $
+                          - generic [ref=e414]:
+                            - text: "69"
+                            - generic [ref=e415]: .
+                          - text: "99"
+                  - generic [ref=e417]:
+                    - status [ref=e418]
+                    - generic [ref=e423] [cursor=pointer]:
+                      - 'button "Add to cart, Monster Hunter Stories 3: Twisted Reflection | Standard Edition | Xbox Series X|S Digital" [ref=e424]'
+                      - generic [ref=e425]: Add to cart
+          - button "Next page" [ref=e428] [cursor=pointer]:
+            - generic [ref=e431]: Next page
+      - 'generic "Get $50 off instantly upon approval for Amazon Visa. Current total: $69.99 Gift Card savings: - $50.00 Cost after savings: $19.99 Find out how" [ref=e435]':
+        - generic [ref=e436]:
+          - generic [ref=e441]:
+            - generic [ref=e442]: Get $50 off instantly
+            - text: upon approval for Amazon Visa.
+          - table [ref=e445]:
+            - rowgroup [ref=e446]:
+              - 'row "Current total: $69.99" [ref=e447]':
+                - cell "Current total:" [ref=e448]
+                - cell "$69.99" [ref=e449]
+              - 'row "Gift Card savings: - $50.00" [ref=e450]':
+                - cell "Gift Card savings:" [ref=e451]
+                - cell "- $50.00" [ref=e452]:
+                  - generic [ref=e453]: "- $50.00"
+              - 'row "Cost after savings: $19.99" [ref=e454]':
+                - cell "Cost after savings:" [ref=e455]
+                - cell "$19.99" [ref=e456]
+          - button [ref=e462] [cursor=pointer]: Find out how
+        - link "Get $50 off instantly upon approval for Amazon Visa." [ref=e463] [cursor=pointer]:
+          - /url: /gp/product/B007URFTYI?pr=con321&inc=50gcUnrec&ts=84e0edw0qqc23zdxto5pbbeqbvhj7e3&plattr=CBCC_SW_Desk_UNREC_StackedImage_launch_V5&place=sw&imp=e186589b-43e1-456d-a769-6ac205d6af21&mru=/cart
+    - generic [ref=e464]:
+      - group [ref=e469]:
+        - generic [ref=e470]:
+          - heading "Customers who bought WWE 2K26 | Standard Edition | XBOX… also bought these items from other categories:" [level=1] [ref=e472]
+          - generic [ref=e475]: Page 1 of 2
+        - generic [ref=e477]:
+          - button "Previous page" [ref=e479] [cursor=pointer]:
+            - generic [ref=e482]: Previous page
+          - group [ref=e484]:
+            - list [ref=e485]:
+              - listitem [ref=e486]:
+                - generic [ref=e487]:
+                  - generic [ref=e488]:
+                    - link "WWE 2K26 Monday Night War - PC Steam [Online Game Code]" [ref=e489] [cursor=pointer]:
+                      - /url: /WWE-2K26-Monday-Night-War/dp/B0GNC8SYBT/ref=sw_img_d_crh_rh_cps?_encoding=UTF8&pd_rd_i=B0GNC8SYBT&pd_rd_w=ubvQG&content-id=amzn1.sym.08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_p=08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - img "WWE 2K26 Monday Night War - PC Steam [Online Game Code]" [ref=e491]
+                    - generic [ref=e492]:
+                      - link "WWE 2K26 Monday Night War - PC Steam [Online Game Code]" [ref=e493] [cursor=pointer]:
+                        - /url: /WWE-2K26-Monday-Night-War/dp/B0GNC8SYBT/ref=sw_ttl_d_crh_rh_cps?_encoding=UTF8&pd_rd_i=B0GNC8SYBT&pd_rd_w=ubvQG&content-id=amzn1.sym.08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_p=08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                        - generic [ref=e495]: WWE 2K26 Monday Night War - PC Steam [Online Game Code]
+                      - link "4.2 out of 5 stars 3" [ref=e497] [cursor=pointer]:
+                        - /url: /product-reviews/B0GNC8SYBT/ref=sw_cr_d_crh_rh_cps?_encoding=UTF8&pd_rd_i=B0GNC8SYBT&pd_rd_w=ubvQG&content-id=amzn1.sym.08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_p=08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                        - generic [ref=e499]: 4.2 out of 5 stars
+                        - text: "3"
+                      - generic [ref=e501]:
+                        - generic [ref=e502]: $149.99
+                        - generic [ref=e503]:
+                          - text: $
+                          - generic [ref=e504]:
+                            - text: "149"
+                            - generic [ref=e505]: .
+                          - text: "99"
+                  - generic [ref=e507]:
+                    - status [ref=e508]
+                    - generic [ref=e513] [cursor=pointer]:
+                      - button "Add to cart, WWE 2K26 Monday Night War - PC Steam [Online Game Code]" [ref=e514]
+                      - generic [ref=e515]: Add to cart
+              - listitem [ref=e517]:
+                - generic [ref=e518]:
+                  - generic [ref=e519]:
+                    - link "WWE 2K26 Standard - PC Steam [Online Game Code]" [ref=e520] [cursor=pointer]:
+                      - /url: /WWE-2K26-Standard-Steam-Online/dp/B0GNCF3SDK/ref=sw_img_d_crh_rh_cps_1?_encoding=UTF8&pd_rd_i=B0GNCF3SDK&pd_rd_w=ubvQG&content-id=amzn1.sym.08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_p=08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - img "WWE 2K26 Standard - PC Steam [Online Game Code]" [ref=e522]
+                    - generic [ref=e523]:
+                      - link "WWE 2K26 Standard - PC Steam [Online Game Code]" [ref=e524] [cursor=pointer]:
+                        - /url: /WWE-2K26-Standard-Steam-Online/dp/B0GNCF3SDK/ref=sw_ttl_d_crh_rh_cps_1?_encoding=UTF8&pd_rd_i=B0GNCF3SDK&pd_rd_w=ubvQG&content-id=amzn1.sym.08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_p=08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                        - generic [ref=e526]: WWE 2K26 Standard - PC Steam [Online Game Code]
+                      - link "5.0 out of 5 stars 3" [ref=e528] [cursor=pointer]:
+                        - /url: /product-reviews/B0GNCF3SDK/ref=sw_cr_d_crh_rh_cps_1?_encoding=UTF8&pd_rd_i=B0GNCF3SDK&pd_rd_w=ubvQG&content-id=amzn1.sym.08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_p=08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                        - generic [ref=e530]: 5.0 out of 5 stars
+                        - text: "3"
+                      - generic [ref=e532]:
+                        - generic [ref=e533]: $69.99
+                        - generic [ref=e534]:
+                          - text: $
+                          - generic [ref=e535]:
+                            - text: "69"
+                            - generic [ref=e536]: .
+                          - text: "99"
+                  - generic [ref=e538]:
+                    - status [ref=e539]
+                    - generic [ref=e544] [cursor=pointer]:
+                      - button "Add to cart, WWE 2K26 Standard - PC Steam [Online Game Code]" [ref=e545]
+                      - generic [ref=e546]: Add to cart
+              - listitem [ref=e548]:
+                - generic [ref=e549]:
+                  - generic [ref=e550]:
+                    - link "WWE 2K26 | Season Pass | XBOX Series X|S Digital" [ref=e551] [cursor=pointer]:
+                      - /url: /2K26-Season-Pass-XBOX-Digital/dp/B0GS73S855/ref=sw_img_d_crh_rh_cps_2?_encoding=UTF8&pd_rd_i=B0GS73S855&pd_rd_w=ubvQG&content-id=amzn1.sym.08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_p=08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - img "WWE 2K26 | Season Pass | XBOX Series X|S Digital" [ref=e553]
+                    - generic [ref=e554]:
+                      - link "WWE 2K26 | Season Pass | XBOX Series X|S Digital" [ref=e555] [cursor=pointer]:
+                        - /url: /2K26-Season-Pass-XBOX-Digital/dp/B0GS73S855/ref=sw_ttl_d_crh_rh_cps_2?_encoding=UTF8&pd_rd_i=B0GS73S855&pd_rd_w=ubvQG&content-id=amzn1.sym.08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_p=08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                        - generic [ref=e557]: WWE 2K26 | Season Pass | XBOX Series X|S Digital
+                      - generic [ref=e559]:
+                        - generic [ref=e560]: $49.99
+                        - generic [ref=e561]:
+                          - text: $
+                          - generic [ref=e562]:
+                            - text: "49"
+                            - generic [ref=e563]: .
+                          - text: "99"
+                  - generic [ref=e565]:
+                    - status [ref=e566]
+                    - generic [ref=e571] [cursor=pointer]:
+                      - button "Add to cart, WWE 2K26 | Season Pass | XBOX Series X|S Digital" [ref=e572]
+                      - generic [ref=e573]: Add to cart
+              - listitem [ref=e575]:
+                - generic [ref=e576]:
+                  - generic [ref=e577]:
+                    - link "WWE 2K26 King of Kings - PC Steam [Online Game Code]" [ref=e578] [cursor=pointer]:
+                      - /url: /WWE-2K26-King-Kings-Online/dp/B0GNCH4GVB/ref=sw_img_d_crh_rh_cps_3?_encoding=UTF8&pd_rd_i=B0GNCH4GVB&pd_rd_w=ubvQG&content-id=amzn1.sym.08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_p=08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - img "WWE 2K26 King of Kings - PC Steam [Online Game Code]" [ref=e580]
+                    - generic [ref=e581]:
+                      - link "WWE 2K26 King of Kings - PC Steam [Online Game Code]" [ref=e582] [cursor=pointer]:
+                        - /url: /WWE-2K26-King-Kings-Online/dp/B0GNCH4GVB/ref=sw_ttl_d_crh_rh_cps_3?_encoding=UTF8&pd_rd_i=B0GNCH4GVB&pd_rd_w=ubvQG&content-id=amzn1.sym.08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_p=08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                        - generic [ref=e584]: WWE 2K26 King of Kings - PC Steam [Online Game Code]
+                      - generic [ref=e586]:
+                        - generic [ref=e587]: $99.99
+                        - generic [ref=e588]:
+                          - text: $
+                          - generic [ref=e589]:
+                            - text: "99"
+                            - generic [ref=e590]: .
+                          - text: "99"
+                  - generic [ref=e592]:
+                    - status [ref=e593]
+                    - generic [ref=e598] [cursor=pointer]:
+                      - button "Add to cart, WWE 2K26 King of Kings - PC Steam [Online Game Code]" [ref=e599]
+                      - generic [ref=e600]: Add to cart
+              - listitem [ref=e602]:
+                - generic [ref=e603]:
+                  - generic [ref=e604]:
+                    - link "XBOX Game Pass Premium | 3 Month Membership | Console, PC, Cloud Gaming Devices | Digital Code" [ref=e605] [cursor=pointer]:
+                      - /url: /Premium-Membership-Console-Devices-Digital/dp/B0GGDR6GPS/ref=sw_img_d_crh_rh_cps_4?_encoding=UTF8&pd_rd_i=B0GGDR6GPS&pd_rd_w=ubvQG&content-id=amzn1.sym.08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_p=08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - img "XBOX Game Pass Premium | 3 Month Membership | Console, PC, Cloud Gaming Devices | Digital Code" [ref=e607]
+                    - generic [ref=e608]:
+                      - link "XBOX Game Pass Premium | 3 Month Membership | Console, PC, Cloud Gaming Devices | Digital Code" [ref=e609] [cursor=pointer]:
+                        - /url: /Premium-Membership-Console-Devices-Digital/dp/B0GGDR6GPS/ref=sw_ttl_d_crh_rh_cps_4?_encoding=UTF8&pd_rd_i=B0GGDR6GPS&pd_rd_w=ubvQG&content-id=amzn1.sym.08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_p=08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                        - generic [ref=e611]: XBOX Game Pass Premium | 3 Month Membership | Console, PC, Cloud Gaming Devices | Digital Code
+                      - link "4.3 out of 5 stars 78" [ref=e613] [cursor=pointer]:
+                        - /url: /product-reviews/B0GGDR6GPS/ref=sw_cr_d_crh_rh_cps_4?_encoding=UTF8&pd_rd_i=B0GGDR6GPS&pd_rd_w=ubvQG&content-id=amzn1.sym.08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_p=08893930-3793-46ca-b3cc-077ca7cb5329&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                        - generic [ref=e615]: 4.3 out of 5 stars
+                        - text: "78"
+                      - generic [ref=e617]:
+                        - generic [ref=e618]: $44.99
+                        - generic [ref=e619]:
+                          - text: $
+                          - generic [ref=e620]:
+                            - text: "44"
+                            - generic [ref=e621]: .
+                          - text: "99"
+                  - generic [ref=e623]:
+                    - status [ref=e624]
+                    - generic [ref=e629] [cursor=pointer]:
+                      - button "Add to cart, XBOX Game Pass Premium | 3 Month Membership | Console, PC, Cloud Gaming Devices | Digital Code" [ref=e630]
+                      - generic [ref=e631]: Add to cart
+          - button "Next page" [ref=e634] [cursor=pointer]:
+            - generic [ref=e637]: Next page
+      - group [ref=e642]:
+        - heading "Customers who bought this item also bought" [level=1] [ref=e645]
+        - group [ref=e650]:
+          - list [ref=e651]:
+            - listitem [ref=e652]:
+              - generic [ref=e653]:
+                - generic [ref=e654]:
+                  - link "WWE 2K26 | Monday Night War Edition | XBOX Series X|S Digital" [ref=e655] [cursor=pointer]:
+                    - /url: /2K26-Monday-Night-XBOX-Digital/dp/B0GMTKWKYG/ref=sw_img_d_pd_ewc_purchase_sim?_encoding=UTF8&pd_rd_i=B0GMTKWKYG&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                    - img "WWE 2K26 | Monday Night War Edition | XBOX Series X|S Digital" [ref=e657]
+                  - generic [ref=e658]:
+                    - link "WWE 2K26 | Monday Night War Edition | XBOX Series X|S Digital" [ref=e659] [cursor=pointer]:
+                      - /url: /2K26-Monday-Night-XBOX-Digital/dp/B0GMTKWKYG/ref=sw_ttl_d_pd_ewc_purchase_sim?_encoding=UTF8&pd_rd_i=B0GMTKWKYG&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e661]: WWE 2K26 | Monday Night War Edition | XBOX Series X|S Digital
+                    - link "3.7 out of 5 stars 13" [ref=e663] [cursor=pointer]:
+                      - /url: /product-reviews/B0GMTKWKYG/ref=sw_cr_d_pd_ewc_purchase_sim?_encoding=UTF8&pd_rd_i=B0GMTKWKYG&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e665]: 3.7 out of 5 stars
+                      - text: "13"
+                    - generic [ref=e667]:
+                      - generic [ref=e668]: $149.99
+                      - generic [ref=e669]:
+                        - text: $
+                        - generic [ref=e670]:
+                          - text: "149"
+                          - generic [ref=e671]: .
+                        - text: "99"
+                - generic [ref=e673]:
+                  - status [ref=e674]
+                  - generic [ref=e679] [cursor=pointer]:
+                    - button "Add to cart, WWE 2K26 | Monday Night War Edition | XBOX Series X|S Digital" [ref=e680]
+                    - generic [ref=e681]: Add to cart
+            - listitem [ref=e683]:
+              - generic [ref=e684]:
+                - generic [ref=e685]:
+                  - link "MLB The Show 26 | Standard Edition | XBOX Series X|S Digital" [ref=e686] [cursor=pointer]:
+                    - /url: /MLB-Show-Standard-XBOX-Digital/dp/B0GQ2J6G81/ref=sw_img_d_pd_ewc_purchase_sim_1?_encoding=UTF8&pd_rd_i=B0GQ2J6G81&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                    - img "MLB The Show 26 | Standard Edition | XBOX Series X|S Digital" [ref=e688]
+                  - generic [ref=e689]:
+                    - link "MLB The Show 26 | Standard Edition | XBOX Series X|S Digital" [ref=e690] [cursor=pointer]:
+                      - /url: /MLB-Show-Standard-XBOX-Digital/dp/B0GQ2J6G81/ref=sw_ttl_d_pd_ewc_purchase_sim_1?_encoding=UTF8&pd_rd_i=B0GQ2J6G81&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e692]: MLB The Show 26 | Standard Edition | XBOX Series X|S Digital
+                    - link "4.4 out of 5 stars 45" [ref=e694] [cursor=pointer]:
+                      - /url: /product-reviews/B0GQ2J6G81/ref=sw_cr_d_pd_ewc_purchase_sim_1?_encoding=UTF8&pd_rd_i=B0GQ2J6G81&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e696]: 4.4 out of 5 stars
+                      - text: "45"
+                    - generic [ref=e698]:
+                      - generic [ref=e699]: $69.99
+                      - generic [ref=e700]:
+                        - text: $
+                        - generic [ref=e701]:
+                          - text: "69"
+                          - generic [ref=e702]: .
+                        - text: "99"
+                - generic [ref=e704]:
+                  - status [ref=e705]
+                  - generic [ref=e710] [cursor=pointer]:
+                    - button "Add to cart, MLB The Show 26 | Standard Edition | XBOX Series X|S Digital" [ref=e711]
+                    - generic [ref=e712]: Add to cart
+            - listitem [ref=e714]:
+              - generic [ref=e715]:
+                - generic [ref=e716]:
+                  - link "WWE 2K26 Monday Night War - PC Steam [Online Game Code]" [ref=e717] [cursor=pointer]:
+                    - /url: /WWE-2K26-Monday-Night-War/dp/B0GNC8SYBT/ref=sw_img_d_pd_ewc_purchase_sim_2?_encoding=UTF8&pd_rd_i=B0GNC8SYBT&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                    - img "WWE 2K26 Monday Night War - PC Steam [Online Game Code]" [ref=e719]
+                  - generic [ref=e720]:
+                    - link "WWE 2K26 Monday Night War - PC Steam [Online Game Code]" [ref=e721] [cursor=pointer]:
+                      - /url: /WWE-2K26-Monday-Night-War/dp/B0GNC8SYBT/ref=sw_ttl_d_pd_ewc_purchase_sim_2?_encoding=UTF8&pd_rd_i=B0GNC8SYBT&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e723]: WWE 2K26 Monday Night War - PC Steam [Online Game Code]
+                    - link "4.2 out of 5 stars 3" [ref=e725] [cursor=pointer]:
+                      - /url: /product-reviews/B0GNC8SYBT/ref=sw_cr_d_pd_ewc_purchase_sim_2?_encoding=UTF8&pd_rd_i=B0GNC8SYBT&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e727]: 4.2 out of 5 stars
+                      - text: "3"
+                    - generic [ref=e729]:
+                      - generic [ref=e730]: $149.99
+                      - generic [ref=e731]:
+                        - text: $
+                        - generic [ref=e732]:
+                          - text: "149"
+                          - generic [ref=e733]: .
+                        - text: "99"
+                - generic [ref=e735]:
+                  - status [ref=e736]
+                  - generic [ref=e741] [cursor=pointer]:
+                    - button "Add to cart, WWE 2K26 Monday Night War - PC Steam [Online Game Code]" [ref=e742]
+                    - generic [ref=e743]: Add to cart
+            - listitem [ref=e745]:
+              - generic [ref=e746]:
+                - generic [ref=e747]:
+                  - link "High On Life 2 Standard - PC Steam [Online Game Code]" [ref=e748] [cursor=pointer]:
+                    - /url: /High-Life-Standard-Steam-Online/dp/B0GN4RWLGB/ref=sw_img_d_pd_ewc_purchase_sim_3?_encoding=UTF8&pd_rd_i=B0GN4RWLGB&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                    - img "High On Life 2 Standard - PC Steam [Online Game Code]" [ref=e750]
+                  - generic [ref=e751]:
+                    - link "High On Life 2 Standard - PC Steam [Online Game Code]" [ref=e752] [cursor=pointer]:
+                      - /url: /High-Life-Standard-Steam-Online/dp/B0GN4RWLGB/ref=sw_ttl_d_pd_ewc_purchase_sim_3?_encoding=UTF8&pd_rd_i=B0GN4RWLGB&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e754]: High On Life 2 Standard - PC Steam [Online Game Code]
+                    - link "5.0 out of 5 stars 2" [ref=e756] [cursor=pointer]:
+                      - /url: /product-reviews/B0GN4RWLGB/ref=sw_cr_d_pd_ewc_purchase_sim_3?_encoding=UTF8&pd_rd_i=B0GN4RWLGB&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e758]: 5.0 out of 5 stars
+                      - text: "2"
+                    - generic [ref=e760]:
+                      - generic [ref=e761]: $59.99
+                      - generic [ref=e762]:
+                        - text: $
+                        - generic [ref=e763]:
+                          - text: "59"
+                          - generic [ref=e764]: .
+                        - text: "99"
+                - generic [ref=e766]:
+                  - status [ref=e767]
+                  - generic [ref=e772] [cursor=pointer]:
+                    - button "Add to cart, High On Life 2 Standard - PC Steam [Online Game Code]" [ref=e773]
+                    - generic [ref=e774]: Add to cart
+            - listitem [ref=e776]:
+              - generic [ref=e777]:
+                - generic [ref=e778]:
+                  - link "WWE 2K26 Standard - PC Steam [Online Game Code]" [ref=e779] [cursor=pointer]:
+                    - /url: /WWE-2K26-Standard-Steam-Online/dp/B0GNCF3SDK/ref=sw_img_d_pd_ewc_purchase_sim_4?_encoding=UTF8&pd_rd_i=B0GNCF3SDK&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                    - img "WWE 2K26 Standard - PC Steam [Online Game Code]" [ref=e781]
+                  - generic [ref=e782]:
+                    - link "WWE 2K26 Standard - PC Steam [Online Game Code]" [ref=e783] [cursor=pointer]:
+                      - /url: /WWE-2K26-Standard-Steam-Online/dp/B0GNCF3SDK/ref=sw_ttl_d_pd_ewc_purchase_sim_4?_encoding=UTF8&pd_rd_i=B0GNCF3SDK&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e785]: WWE 2K26 Standard - PC Steam [Online Game Code]
+                    - link "5.0 out of 5 stars 3" [ref=e787] [cursor=pointer]:
+                      - /url: /product-reviews/B0GNCF3SDK/ref=sw_cr_d_pd_ewc_purchase_sim_4?_encoding=UTF8&pd_rd_i=B0GNCF3SDK&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e789]: 5.0 out of 5 stars
+                      - text: "3"
+                    - generic [ref=e791]:
+                      - generic [ref=e792]: $69.99
+                      - generic [ref=e793]:
+                        - text: $
+                        - generic [ref=e794]:
+                          - text: "69"
+                          - generic [ref=e795]: .
+                        - text: "99"
+                - generic [ref=e797]:
+                  - status [ref=e798]
+                  - generic [ref=e803] [cursor=pointer]:
+                    - button "Add to cart, WWE 2K26 Standard - PC Steam [Online Game Code]" [ref=e804]
+                    - generic [ref=e805]: Add to cart
+            - listitem [ref=e807]:
+              - generic [ref=e808]:
+                - generic [ref=e809]:
+                  - 'link "Monster Hunter Stories 3: Twisted Reflection | Standard Edition | Xbox Series X|S Digital" [ref=e810] [cursor=pointer]':
+                    - /url: /Monster-Hunter-Stories-Reflection-Standard/dp/B0GGLWF2R3/ref=sw_img_d_pd_ewc_purchase_sim_5?_encoding=UTF8&pd_rd_i=B0GGLWF2R3&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                    - 'img "Monster Hunter Stories 3: Twisted Reflection | Standard Edition | Xbox Series X|S Digital" [ref=e812]'
+                  - generic [ref=e813]:
+                    - 'link "Monster Hunter Stories 3: Twisted Reflection | Standard Edition | Xbox Series X|S Digital" [ref=e814] [cursor=pointer]':
+                      - /url: /Monster-Hunter-Stories-Reflection-Standard/dp/B0GGLWF2R3/ref=sw_ttl_d_pd_ewc_purchase_sim_5?_encoding=UTF8&pd_rd_i=B0GGLWF2R3&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e816]: "Monster Hunter Stories 3: Twisted Reflection | Standard Edition | Xbox Series X|S Digital"
+                    - link "3.5 out of 5 stars 3" [ref=e818] [cursor=pointer]:
+                      - /url: /product-reviews/B0GGLWF2R3/ref=sw_cr_d_pd_ewc_purchase_sim_5?_encoding=UTF8&pd_rd_i=B0GGLWF2R3&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e820]: 3.5 out of 5 stars
+                      - text: "3"
+                    - generic [ref=e822]:
+                      - generic [ref=e823]: $69.99
+                      - generic [ref=e824]:
+                        - text: $
+                        - generic [ref=e825]:
+                          - text: "69"
+                          - generic [ref=e826]: .
+                        - text: "99"
+                - generic [ref=e828]:
+                  - status [ref=e829]
+                  - generic [ref=e834] [cursor=pointer]:
+                    - 'button "Add to cart, Monster Hunter Stories 3: Twisted Reflection | Standard Edition | Xbox Series X|S Digital" [ref=e835]'
+                    - generic [ref=e836]: Add to cart
+            - listitem [ref=e838]:
+              - generic [ref=e839]:
+                - generic [ref=e840]:
+                  - link "WWE 2K26 | Season Pass | XBOX Series X|S Digital" [ref=e841] [cursor=pointer]:
+                    - /url: /2K26-Season-Pass-XBOX-Digital/dp/B0GS73S855/ref=sw_img_d_pd_ewc_purchase_sim_6?_encoding=UTF8&pd_rd_i=B0GS73S855&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                    - img "WWE 2K26 | Season Pass | XBOX Series X|S Digital" [ref=e843]
+                  - generic [ref=e844]:
+                    - link "WWE 2K26 | Season Pass | XBOX Series X|S Digital" [ref=e845] [cursor=pointer]:
+                      - /url: /2K26-Season-Pass-XBOX-Digital/dp/B0GS73S855/ref=sw_ttl_d_pd_ewc_purchase_sim_6?_encoding=UTF8&pd_rd_i=B0GS73S855&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e847]: WWE 2K26 | Season Pass | XBOX Series X|S Digital
+                    - generic [ref=e849]:
+                      - generic [ref=e850]: $49.99
+                      - generic [ref=e851]:
+                        - text: $
+                        - generic [ref=e852]:
+                          - text: "49"
+                          - generic [ref=e853]: .
+                        - text: "99"
+                - generic [ref=e855]:
+                  - status [ref=e856]
+                  - generic [ref=e861] [cursor=pointer]:
+                    - button "Add to cart, WWE 2K26 | Season Pass | XBOX Series X|S Digital" [ref=e862]
+                    - generic [ref=e863]: Add to cart
+            - listitem [ref=e865]:
+              - generic [ref=e866]:
+                - generic [ref=e867]:
+                  - link "Crimson Desert | Standard Edition | XBOX Series X|S and Windows Digital" [ref=e868] [cursor=pointer]:
+                    - /url: /Crimson-Desert-Standard-Windows-Digital/dp/B0GL9WBNJ9/ref=sw_img_d_pd_ewc_purchase_sim_7?_encoding=UTF8&pd_rd_i=B0GL9WBNJ9&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                    - img "Crimson Desert | Standard Edition | XBOX Series X|S and Windows Digital" [ref=e870]
+                  - generic [ref=e871]:
+                    - link "Crimson Desert | Standard Edition | XBOX Series X|S and Windows Digital" [ref=e872] [cursor=pointer]:
+                      - /url: /Crimson-Desert-Standard-Windows-Digital/dp/B0GL9WBNJ9/ref=sw_ttl_d_pd_ewc_purchase_sim_7?_encoding=UTF8&pd_rd_i=B0GL9WBNJ9&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e874]: Crimson Desert | Standard Edition | XBOX Series X|S and Windows Digital
+                    - link "4.7 out of 5 stars 45" [ref=e876] [cursor=pointer]:
+                      - /url: /product-reviews/B0GL9WBNJ9/ref=sw_cr_d_pd_ewc_purchase_sim_7?_encoding=UTF8&pd_rd_i=B0GL9WBNJ9&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e878]: 4.7 out of 5 stars
+                      - text: "45"
+                    - generic [ref=e880]:
+                      - generic [ref=e881]: $66.99
+                      - generic [ref=e882]:
+                        - text: $
+                        - generic [ref=e883]:
+                          - text: "66"
+                          - generic [ref=e884]: .
+                        - text: "99"
+                - generic [ref=e886]:
+                  - status [ref=e887]
+                  - generic [ref=e892] [cursor=pointer]:
+                    - button "Add to cart, Crimson Desert | Standard Edition | XBOX Series X|S and Windows Digital" [ref=e893]
+                    - generic [ref=e894]: Add to cart
+            - listitem [ref=e896]:
+              - generic [ref=e897]:
+                - generic [ref=e898]:
+                  - link "XBOX Game Pass Essential | 6 Month Membership | Console, PC, Cloud Gaming Devices | Digital Code" [ref=e899] [cursor=pointer]:
+                    - /url: /Xbox-Game-Pass-Core-Membership/dp/B0CMZKQ31J/ref=sw_img_d_pd_ewc_purchase_sim_8?_encoding=UTF8&pd_rd_i=B0CMZKQ31J&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                    - img "XBOX Game Pass Essential | 6 Month Membership | Console, PC, Cloud Gaming Devices | Digital Code" [ref=e901]
+                  - generic [ref=e902]:
+                    - link "XBOX Game Pass Essential | 6 Month Membership | Console, PC, Cloud Gaming Devices | Digital Code" [ref=e903] [cursor=pointer]:
+                      - /url: /Xbox-Game-Pass-Core-Membership/dp/B0CMZKQ31J/ref=sw_ttl_d_pd_ewc_purchase_sim_8?_encoding=UTF8&pd_rd_i=B0CMZKQ31J&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e905]: XBOX Game Pass Essential | 6 Month Membership | Console, PC, Cloud Gaming Devices | Digital Code
+                    - link "4.5 out of 5 stars 707" [ref=e907] [cursor=pointer]:
+                      - /url: /product-reviews/B0CMZKQ31J/ref=sw_cr_d_pd_ewc_purchase_sim_8?_encoding=UTF8&pd_rd_i=B0CMZKQ31J&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e909]: 4.5 out of 5 stars
+                      - text: "707"
+                    - generic [ref=e911]:
+                      - generic [ref=e912]: $39.99
+                      - generic [ref=e913]:
+                        - text: $
+                        - generic [ref=e914]:
+                          - text: "39"
+                          - generic [ref=e915]: .
+                        - text: "99"
+                - generic [ref=e917]:
+                  - status [ref=e918]
+                  - generic [ref=e923] [cursor=pointer]:
+                    - button "Add to cart, XBOX Game Pass Essential | 6 Month Membership | Console, PC, Cloud Gaming Devices | Digital Code" [ref=e924]
+                    - generic [ref=e925]: Add to cart
+            - listitem [ref=e927]:
+              - generic [ref=e928]:
+                - generic [ref=e929]:
+                  - link "UFC 6 | Standard Edition | Xbox Series X|S Digital Code" [ref=e930] [cursor=pointer]:
+                    - /url: /UFC-Standard-Xbox-Digital-Code/dp/B0H2FBTTW9/ref=sw_img_d_pd_ewc_purchase_sim_9?_encoding=UTF8&pd_rd_i=B0H2FBTTW9&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                    - img "UFC 6 | Standard Edition | Xbox Series X|S Digital Code" [ref=e932]
+                  - generic [ref=e933]:
+                    - link "UFC 6 | Standard Edition | Xbox Series X|S Digital Code" [ref=e934] [cursor=pointer]:
+                      - /url: /UFC-Standard-Xbox-Digital-Code/dp/B0H2FBTTW9/ref=sw_ttl_d_pd_ewc_purchase_sim_9?_encoding=UTF8&pd_rd_i=B0H2FBTTW9&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e936]: UFC 6 | Standard Edition | Xbox Series X|S Digital Code
+                    - link "2.5 out of 5 stars 3" [ref=e938] [cursor=pointer]:
+                      - /url: /product-reviews/B0H2FBTTW9/ref=sw_cr_d_pd_ewc_purchase_sim_9?_encoding=UTF8&pd_rd_i=B0H2FBTTW9&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e940]: 2.5 out of 5 stars
+                      - text: "3"
+                    - generic [ref=e942]:
+                      - generic [ref=e943]: $69.99
+                      - generic [ref=e944]:
+                        - text: $
+                        - generic [ref=e945]:
+                          - text: "69"
+                          - generic [ref=e946]: .
+                        - text: "99"
+                - generic [ref=e948]:
+                  - status [ref=e949]
+                  - generic [ref=e954] [cursor=pointer]:
+                    - button "Add to cart, UFC 6 | Standard Edition | Xbox Series X|S Digital Code" [ref=e955]
+                    - generic [ref=e956]: Add to cart
+            - listitem [ref=e958]:
+              - generic [ref=e959]:
+                - generic [ref=e960]:
+                  - link "Forza Horizon 6 | Standard Edition | XBOX Series X|S and Windows Digital" [ref=e961] [cursor=pointer]:
+                    - /url: /Forza-Horizon-Standard-Windows-Digital/dp/B0GLJC8Q75/ref=sw_img_d_pd_ewc_purchase_sim_10?_encoding=UTF8&pd_rd_i=B0GLJC8Q75&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                    - img "Forza Horizon 6 | Standard Edition | XBOX Series X|S and Windows Digital" [ref=e963]
+                  - generic [ref=e964]:
+                    - link "Forza Horizon 6 | Standard Edition | XBOX Series X|S and Windows Digital" [ref=e965] [cursor=pointer]:
+                      - /url: /Forza-Horizon-Standard-Windows-Digital/dp/B0GLJC8Q75/ref=sw_ttl_d_pd_ewc_purchase_sim_10?_encoding=UTF8&pd_rd_i=B0GLJC8Q75&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e967]: Forza Horizon 6 | Standard Edition | XBOX Series X|S and Windows Digital
+                    - link "4.4 out of 5 stars 27" [ref=e969] [cursor=pointer]:
+                      - /url: /product-reviews/B0GLJC8Q75/ref=sw_cr_d_pd_ewc_purchase_sim_10?_encoding=UTF8&pd_rd_i=B0GLJC8Q75&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e971]: 4.4 out of 5 stars
+                      - text: "27"
+                    - generic [ref=e973]:
+                      - generic [ref=e974]: $69.99
+                      - generic [ref=e975]:
+                        - text: $
+                        - generic [ref=e976]:
+                          - text: "69"
+                          - generic [ref=e977]: .
+                        - text: "99"
+                - generic [ref=e979]:
+                  - status [ref=e980]
+                  - generic [ref=e985] [cursor=pointer]:
+                    - button "Add to cart, Forza Horizon 6 | Standard Edition | XBOX Series X|S and Windows Digital" [ref=e986]
+                    - generic [ref=e987]: Add to cart
+            - listitem [ref=e989]:
+              - generic [ref=e990]:
+                - generic [ref=e991]:
+                  - 'link "Pokémon: Let’s Go, Pikachu! (Switch) - Nintendo Switch [Digital Code]" [ref=e992] [cursor=pointer]':
+                    - /url: /Pok%C3%A9mon-Pikachu-Switch-Nintendo-Digital/dp/B07DHMFZ3B/ref=sw_img_d_pd_ewc_purchase_sim_11?_encoding=UTF8&pd_rd_i=B07DHMFZ3B&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                    - 'img "Pokémon: Let’s Go, Pikachu! (Switch) - Nintendo Switch [Digital Code]" [ref=e994]'
+                  - generic [ref=e995]:
+                    - 'link "Pokémon: Let’s Go, Pikachu! (Switch) - Nintendo Switch [Digital Code]" [ref=e996] [cursor=pointer]':
+                      - /url: /Pok%C3%A9mon-Pikachu-Switch-Nintendo-Digital/dp/B07DHMFZ3B/ref=sw_ttl_d_pd_ewc_purchase_sim_11?_encoding=UTF8&pd_rd_i=B07DHMFZ3B&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e998]: "Pokémon: Let’s Go, Pikachu! (Switch) - Nintendo Switch [Digital Code]"
+                    - link "4.4 out of 5 stars 354" [ref=e1000] [cursor=pointer]:
+                      - /url: /product-reviews/B07DHMFZ3B/ref=sw_cr_d_pd_ewc_purchase_sim_11?_encoding=UTF8&pd_rd_i=B07DHMFZ3B&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e1002]: 4.4 out of 5 stars
+                      - text: "354"
+                    - generic [ref=e1004]:
+                      - generic [ref=e1005]: $59.99
+                      - generic [ref=e1006]:
+                        - text: $
+                        - generic [ref=e1007]:
+                          - text: "59"
+                          - generic [ref=e1008]: .
+                        - text: "99"
+                - generic [ref=e1010]:
+                  - status [ref=e1011]
+                  - generic [ref=e1016] [cursor=pointer]:
+                    - 'button "Add to cart, Pokémon: Let’s Go, Pikachu! (Switch) - Nintendo Switch [Digital Code]" [ref=e1017]'
+                    - generic [ref=e1018]: Add to cart
+            - listitem [ref=e1020]:
+              - generic [ref=e1021]:
+                - generic [ref=e1022]:
+                  - link "WWE 2K26 King of Kings - PC Steam [Online Game Code]" [ref=e1023] [cursor=pointer]:
+                    - /url: /WWE-2K26-King-Kings-Online/dp/B0GNCH4GVB/ref=sw_img_d_pd_ewc_purchase_sim_12?_encoding=UTF8&pd_rd_i=B0GNCH4GVB&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                    - img "WWE 2K26 King of Kings - PC Steam [Online Game Code]" [ref=e1025]
+                  - generic [ref=e1026]:
+                    - link "WWE 2K26 King of Kings - PC Steam [Online Game Code]" [ref=e1027] [cursor=pointer]:
+                      - /url: /WWE-2K26-King-Kings-Online/dp/B0GNCH4GVB/ref=sw_ttl_d_pd_ewc_purchase_sim_12?_encoding=UTF8&pd_rd_i=B0GNCH4GVB&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e1029]: WWE 2K26 King of Kings - PC Steam [Online Game Code]
+                    - generic [ref=e1031]:
+                      - generic [ref=e1032]: $99.99
+                      - generic [ref=e1033]:
+                        - text: $
+                        - generic [ref=e1034]:
+                          - text: "99"
+                          - generic [ref=e1035]: .
+                        - text: "99"
+                - generic [ref=e1037]:
+                  - status [ref=e1038]
+                  - generic [ref=e1043] [cursor=pointer]:
+                    - button "Add to cart, WWE 2K26 King of Kings - PC Steam [Online Game Code]" [ref=e1044]
+                    - generic [ref=e1045]: Add to cart
+            - listitem [ref=e1047]:
+              - generic [ref=e1048]:
+                - generic [ref=e1049]:
+                  - 'link "Pokémon Legends: Z-A Standard - Nintendo Switch [Digital Code]" [ref=e1050] [cursor=pointer]':
+                    - /url: /Pok%C3%A9mon-Legends-Z-Standard-Nintendo/dp/B0FDN7WFM7/ref=sw_img_d_pd_ewc_purchase_sim_13?_encoding=UTF8&pd_rd_i=B0FDN7WFM7&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                    - 'img "Pokémon Legends: Z-A Standard - Nintendo Switch [Digital Code]" [ref=e1052]'
+                  - generic [ref=e1053]:
+                    - 'link "Pokémon Legends: Z-A Standard - Nintendo Switch [Digital Code]" [ref=e1054] [cursor=pointer]':
+                      - /url: /Pok%C3%A9mon-Legends-Z-Standard-Nintendo/dp/B0FDN7WFM7/ref=sw_ttl_d_pd_ewc_purchase_sim_13?_encoding=UTF8&pd_rd_i=B0FDN7WFM7&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e1056]: "Pokémon Legends: Z-A Standard - Nintendo Switch [Digital Code]"
+                    - link "4.7 out of 5 stars 269" [ref=e1058] [cursor=pointer]:
+                      - /url: /product-reviews/B0FDN7WFM7/ref=sw_cr_d_pd_ewc_purchase_sim_13?_encoding=UTF8&pd_rd_i=B0FDN7WFM7&pd_rd_w=SqK4E&content-id=amzn1.sym.8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_p=8e0abace-560d-4ebc-8138-ae94d1b9690f&pf_rd_r=YK3SWS0KSYT8WG2KSH36&pd_rd_wg=iQylj&pd_rd_r=6a7dc1b4-6395-430a-84f9-8b01aa1643fd
+                      - generic [ref=e1060]: 4.7 out of 5 stars
+                      - text: "269"
+                    - generic [ref=e1062]:
+                      - generic [ref=e1063]: $59.99
+                      - generic [ref=e1064]:
+                        - text: $
+                        - generic [ref=e1065]:
+                          - text: "59"
+                          - generic [ref=e1066]: .
+                        - text: "99"
+                - generic [ref=e1068]:
+                  - status [ref=e1069]
+                  - generic [ref=e1074] [cursor=pointer]:
+                    - 'button "Add to cart, Pokémon Legends: Z-A Standard - Nintendo Switch [Digital Code]" [ref=e1075]'
+                    - generic [ref=e1076]: Add to cart
+  - complementary "Your recently viewed items and featured recommendations"
+  - generic [ref=e1078]:
+    - button "Back to top" [ref=e1079] [cursor=pointer]:
+      - generic [ref=e1080]: Back to top
+    - generic [ref=e1081]:
+      - generic [ref=e1082]:
+        - heading "Get to Know Us" [level=6] [ref=e1083]
+        - list [ref=e1084]:
+          - listitem [ref=e1085]:
+            - link "Careers" [ref=e1086] [cursor=pointer]:
+              - /url: https://www.amazon.jobs
+          - listitem [ref=e1087]:
+            - link "Amazon Newsletter" [ref=e1088] [cursor=pointer]:
+              - /url: https://email.aboutamazon.com/l/637851/2020-10-29/pd87g?utm_source=gateway&utm_medium=amazonfooters&utm_campaign=newslettersubscribers&utm_content=amazonnewssignup
+          - listitem [ref=e1089]:
+            - link "About Amazon" [ref=e1090] [cursor=pointer]:
+              - /url: https://www.aboutamazon.com/?utm_source=gateway&utm_medium=footer&token=about
+          - listitem [ref=e1091]:
+            - link "Accessibility" [ref=e1092] [cursor=pointer]:
+              - /url: https://www.amazon.com/b?node=15701038011&ie=UTF8
+          - listitem [ref=e1093]:
+            - link "Sustainability" [ref=e1094] [cursor=pointer]:
+              - /url: https://sustainability.aboutamazon.com/?utm_source=gateway&utm_medium=footer&ref_=susty_footer
+          - listitem [ref=e1095]:
+            - link "Press Center" [ref=e1096] [cursor=pointer]:
+              - /url: https://www.amazon.com/pr
+          - listitem [ref=e1097]:
+            - link "Investor Relations" [ref=e1098] [cursor=pointer]:
+              - /url: https://www.amazon.com/ir
+          - listitem [ref=e1099]:
+            - link "Amazon Devices" [ref=e1100] [cursor=pointer]:
+              - /url: /gp/browse.html?node=2102313011&ref_=footer_devices
+          - listitem [ref=e1101]:
+            - link "Amazon Science" [ref=e1102] [cursor=pointer]:
+              - /url: https://www.amazon.science
+      - generic [ref=e1104]:
+        - heading "Make Money with Us" [level=6] [ref=e1105]
+        - list [ref=e1106]:
+          - listitem [ref=e1107]:
+            - link "Sell on Amazon" [ref=e1108] [cursor=pointer]:
+              - /url: https://sell.amazon.com/?ld=AZFSSOA_FTSELL-C&ref_=footer_soa
+          - listitem [ref=e1109]:
+            - link "Sell apps on Amazon" [ref=e1110] [cursor=pointer]:
+              - /url: https://developer.amazon.com
+          - listitem [ref=e1111]:
+            - link "Supply to Amazon" [ref=e1112] [cursor=pointer]:
+              - /url: https://supply.amazon.com
+          - listitem [ref=e1113]:
+            - link "Protect & Build Your Brand" [ref=e1114] [cursor=pointer]:
+              - /url: https://sell.amazon.com/brand-registry?ld=AZUSSOA_ABR-FT
+          - listitem [ref=e1115]:
+            - link "Become an Affiliate" [ref=e1116] [cursor=pointer]:
+              - /url: https://affiliate-program.amazon.com/
+          - listitem [ref=e1117]:
+            - link "Become a Delivery Driver" [ref=e1118] [cursor=pointer]:
+              - /url: https://dspjobhub.com/
+          - listitem [ref=e1119]:
+            - link "Start a Package Delivery Business" [ref=e1120] [cursor=pointer]:
+              - /url: https://logistics.amazon.com/marketing?utm_source=amzn&utm_medium=footer&utm_campaign=home
+          - listitem [ref=e1121]:
+            - link "Advertise Your Products" [ref=e1122] [cursor=pointer]:
+              - /url: https://advertising.amazon.com/?ref=ext_amzn_ftr
+          - listitem [ref=e1123]:
+            - link "Self-Publish with Us" [ref=e1124] [cursor=pointer]:
+              - /url: /gp/seller-account/mm-summary-page.html?ld=AZFooterSelfPublish&topic=200260520&ref_=footer_publishing
+          - listitem [ref=e1125]:
+            - link "Become an Amazon Hub Partner" [ref=e1126] [cursor=pointer]:
+              - /url: https://www.amazon.com/b?node=216188543011
+          - listitem [ref=e1127]:
+            - text: ›
+            - link "See More Ways to Make Money" [ref=e1128] [cursor=pointer]:
+              - /url: /b/?node=18190131011&ld=AZUSSOA-seemore&ref_=footer_seemore
+      - generic [ref=e1130]:
+        - heading "Amazon Payment Products" [level=6] [ref=e1131]
+        - list [ref=e1132]:
+          - listitem [ref=e1133]:
+            - link "Amazon Visa" [ref=e1134] [cursor=pointer]:
+              - /url: /iss/credit/rewardscardmember?plattr=CBFOOT&ref_=footer_cbcc
+          - listitem [ref=e1135]:
+            - link "Amazon Store Card" [ref=e1136] [cursor=pointer]:
+              - /url: /credit/storecard/member?plattr=PLCCFOOT&ref_=footer_plcc
+          - listitem [ref=e1137]:
+            - link "Amazon Secured Card" [ref=e1138] [cursor=pointer]:
+              - /url: /dp/product/B084KP3NG6?plattr=SCFOOT&ref_=footer_ACB
+          - listitem [ref=e1139]:
+            - link "Amazon Business Card" [ref=e1140] [cursor=pointer]:
+              - /url: /dp/B0DVBL912R?plattr=ACOMFO&ie=UTF-8
+          - listitem [ref=e1141]:
+            - link "Shop with Points" [ref=e1142] [cursor=pointer]:
+              - /url: https://www.amazon.com/hp/shopwithpoints/servicing
+          - listitem [ref=e1143]:
+            - link "Credit Card Marketplace" [ref=e1144] [cursor=pointer]:
+              - /url: /gp/browse.html?node=3561432011&ref_=footer_ccmp
+          - listitem [ref=e1145]:
+            - link "Reload Your Balance" [ref=e1146] [cursor=pointer]:
+              - /url: /gp/browse.html?node=10232440011&ref_=footer_reload_us
+          - listitem [ref=e1147]:
+            - link "Gift Cards" [ref=e1148] [cursor=pointer]:
+              - /url: https://www.amazon.com/b/?node=2238192011&ref=shop_footer_payments_gc_desktop
+          - listitem [ref=e1149]:
+            - link "Amazon Currency Converter" [ref=e1150] [cursor=pointer]:
+              - /url: /gp/browse.html?node=388305011&ref_=footer_tfx
+      - generic [ref=e1152]:
+        - heading "Let Us Help You" [level=6] [ref=e1153]
+        - list [ref=e1154]:
+          - listitem [ref=e1155]:
+            - link "Your Account" [ref=e1156] [cursor=pointer]:
+              - /url: https://www.amazon.com/gp/css/homepage.html?ref_=footer_ya
+          - listitem [ref=e1157]:
+            - link "Your Orders" [ref=e1158] [cursor=pointer]:
+              - /url: https://www.amazon.com/gp/css/order-history?ref_=footer_yo
+          - listitem [ref=e1159]:
+            - link "Shipping Rates & Policies" [ref=e1160] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=468520&ref_=footer_shiprates
+          - listitem [ref=e1161]:
+            - link "Amazon Prime" [ref=e1162] [cursor=pointer]:
+              - /url: /gp/prime?ref_=footer_prime
+          - listitem [ref=e1163]:
+            - link "Returns & Replacements" [ref=e1164] [cursor=pointer]:
+              - /url: /gp/css/returns/homepage.html?ref_=footer_hy_f_4
+          - listitem [ref=e1165]:
+            - link "Manage Your Content and Devices" [ref=e1166] [cursor=pointer]:
+              - /url: /hz/mycd/myx?ref_=footer_myk
+          - listitem [ref=e1167]:
+            - link "Recalls and Product Safety Alerts" [ref=e1168] [cursor=pointer]:
+              - /url: https://www.amazon.com/product-safety-alerts?ref_=footer_bsx_ypsa
+          - listitem [ref=e1169]:
+            - link "Registry & Gift List" [ref=e1170] [cursor=pointer]:
+              - /url: /registries?ref_=nav_footer_registry_giftlist_desktop
+          - listitem [ref=e1171]:
+            - link "Help" [ref=e1172] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=508510&ref_=footer_gw_m_b_he
+    - generic [ref=e1174]:
+      - link "Amazon US Home" [ref=e1177] [cursor=pointer]:
+        - /url: /?ref_=footer_logo
+      - generic [ref=e1180]:
+        - generic [ref=e1181]:
+          - link "Choose a language for shopping. Current selection is English." [ref=e1182] [cursor=pointer]:
+            - /url: /customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=footer_lang
+            - generic [ref=e1184]: English
+          - button "Expand to Change Language or Country" [ref=e1185] [cursor=pointer]
+        - button "Choose a country/region for shopping. The current selection is United States." [ref=e1186] [cursor=pointer]:
+          - generic [ref=e1188]: United States
+    - navigation "More on Amazon" [ref=e1189]:
+      - generic "More on Amazon" [ref=e1190]:
+        - list [ref=e1191]:
+          - listitem [ref=e1192]:
+            - link "Amazon Music Stream millions of songs" [ref=e1193] [cursor=pointer]:
+              - /url: https://music.amazon.com?ref=dm_aff_amz_com
+              - heading "Amazon Music" [level=5] [ref=e1194]
+              - generic [ref=e1195]:
+                - text: Stream millions
+                - text: of songs
+          - listitem [ref=e1196]
+          - listitem [ref=e1197]:
+            - link "Amazon Ads Reach customers wherever they spend their time" [ref=e1198] [cursor=pointer]:
+              - /url: https://advertising.amazon.com/?ref=footer_advtsing_amzn_com
+              - heading "Amazon Ads" [level=5] [ref=e1199]
+              - generic [ref=e1200]:
+                - text: Reach customers
+                - text: wherever they
+                - text: spend their time
+          - listitem [ref=e1201]
+          - listitem [ref=e1202]:
+            - link "6pm Score deals on fashion brands" [ref=e1203] [cursor=pointer]:
+              - /url: https://www.6pm.com
+              - heading "6pm" [level=5] [ref=e1204]
+              - generic [ref=e1205]:
+                - text: Score deals
+                - text: on fashion brands
+          - listitem [ref=e1206]
+          - listitem [ref=e1207]:
+            - link "AbeBooks Books, art & collectibles" [ref=e1208] [cursor=pointer]:
+              - /url: https://www.abebooks.com
+              - heading "AbeBooks" [level=5] [ref=e1209]
+              - generic [ref=e1210]:
+                - text: Books, art
+                - text: "& collectibles"
+          - listitem [ref=e1211]
+          - listitem [ref=e1212]:
+            - link "ACX Audiobook Publishing Made Easy" [ref=e1213] [cursor=pointer]:
+              - /url: https://www.acx.com/
+              - heading "ACX" [level=5] [ref=e1214]
+              - generic [ref=e1215]:
+                - text: Audiobook Publishing
+                - text: Made Easy
+          - listitem [ref=e1216]
+          - listitem [ref=e1217]:
+            - link "Sell on Amazon Start a Selling Account" [ref=e1218] [cursor=pointer]:
+              - /url: https://sell.amazon.com/?ld=AZUSSOA-footer-aff&ref_=footer_sell
+              - heading "Sell on Amazon" [level=5] [ref=e1219]
+              - generic [ref=e1220]: Start a Selling Account
+          - listitem [ref=e1221]
+          - listitem [ref=e1222]:
+            - link "Veeqo Shipping Software Inventory Management" [ref=e1223] [cursor=pointer]:
+              - /url: https://www.veeqo.com/?utm_source=amazon&utm_medium=website&utm_campaign=footer
+              - heading "Veeqo" [level=5] [ref=e1224]
+              - generic [ref=e1225]:
+                - text: Shipping Software
+                - text: Inventory Management
+        - list [ref=e1226]:
+          - listitem [ref=e1227]:
+            - link "Amazon Business Everything For Your Business" [ref=e1228] [cursor=pointer]:
+              - /url: /business?ref_=footer_retail_b2b
+              - heading "Amazon Business" [level=5] [ref=e1229]
+              - generic [ref=e1230]:
+                - text: Everything For
+                - text: Your Business
+          - listitem [ref=e1231]
+          - listitem [ref=e1232]:
+            - link "Amazon Fresh Groceries & More Right To Your Door" [ref=e1233] [cursor=pointer]:
+              - /url: /alm/storefront?almBrandId=QW1hem9uIEZyZXNo&ref_=footer_aff_fresh
+              - heading "Amazon Fresh" [level=5] [ref=e1234]
+              - generic [ref=e1235]:
+                - text: Groceries & More
+                - text: Right To Your Door
+          - listitem [ref=e1236]
+          - listitem [ref=e1237]:
+            - link "AmazonGlobal Ship Orders Internationally" [ref=e1238] [cursor=pointer]:
+              - /url: /gp/browse.html?node=20338496011&ref_=footer_amazonglobal
+              - heading "AmazonGlobal" [level=5] [ref=e1239]
+              - generic [ref=e1240]:
+                - text: Ship Orders
+                - text: Internationally
+          - listitem [ref=e1241]
+          - listitem [ref=e1242]:
+            - link "Home Services Experienced Pros Happiness Guarantee" [ref=e1243] [cursor=pointer]:
+              - /url: /services?ref_=footer_services
+              - heading "Home Services" [level=5] [ref=e1244]
+              - generic [ref=e1245]:
+                - text: Experienced Pros
+                - text: Happiness Guarantee
+          - listitem [ref=e1246]
+          - listitem [ref=e1247]:
+            - link "Amazon Web Services Scalable Cloud Computing Services" [ref=e1248] [cursor=pointer]:
+              - /url: https://aws.amazon.com/what-is-cloud-computing/?sc_channel=EL&sc_campaign=amazonfooter
+              - heading "Amazon Web Services" [level=5] [ref=e1249]
+              - generic [ref=e1250]:
+                - text: Scalable Cloud
+                - text: Computing Services
+          - listitem [ref=e1251]
+          - listitem [ref=e1252]:
+            - link "Audible Listen to Books & Original Audio Performances" [ref=e1253] [cursor=pointer]:
+              - /url: https://www.audible.com
+              - heading "Audible" [level=5] [ref=e1254]
+              - generic [ref=e1255]:
+                - text: Listen to Books & Original
+                - text: Audio Performances
+          - listitem [ref=e1256]
+          - listitem [ref=e1257]:
+            - link "Box Office Mojo Find Movie Box Office Data" [ref=e1258] [cursor=pointer]:
+              - /url: https://www.boxofficemojo.com/?ref_=amzn_nav_ftr
+              - heading "Box Office Mojo" [level=5] [ref=e1259]
+              - generic [ref=e1260]:
+                - text: Find Movie
+                - text: Box Office Data
+        - list [ref=e1261]:
+          - listitem [ref=e1262]:
+            - link "Goodreads Book reviews & recommendations" [ref=e1263] [cursor=pointer]:
+              - /url: https://www.goodreads.com
+              - heading "Goodreads" [level=5] [ref=e1264]
+              - generic [ref=e1265]:
+                - text: Book reviews
+                - text: "& recommendations"
+          - listitem [ref=e1266]
+          - listitem [ref=e1267]:
+            - link "IMDb Movies, TV & Celebrities" [ref=e1268] [cursor=pointer]:
+              - /url: https://www.imdb.com
+              - heading "IMDb" [level=5] [ref=e1269]
+              - generic [ref=e1270]:
+                - text: Movies, TV
+                - text: "& Celebrities"
+          - listitem [ref=e1271]
+          - listitem [ref=e1272]:
+            - link "IMDbPro Get Info Entertainment Professionals Need" [ref=e1273] [cursor=pointer]:
+              - /url: https://pro.imdb.com?ref_=amzn_nav_ftr
+              - heading "IMDbPro" [level=5] [ref=e1274]
+              - generic [ref=e1275]:
+                - text: Get Info Entertainment
+                - text: Professionals Need
+          - listitem [ref=e1276]
+          - listitem [ref=e1277]:
+            - link "Kindle Direct Publishing Indie Digital & Print Publishing Made Easy" [ref=e1278] [cursor=pointer]:
+              - /url: https://kdp.amazon.com
+              - heading "Kindle Direct Publishing" [level=5] [ref=e1279]
+              - generic [ref=e1280]:
+                - text: Indie Digital & Print Publishing
+                - text: Made Easy
+          - listitem [ref=e1281]
+          - listitem [ref=e1282]:
+            - link "Amazon Photos Unlimited Photo Storage Free With Prime" [ref=e1283] [cursor=pointer]:
+              - /url: /gp/browse.html?node=13234696011&ref_=_gno_p_foot
+              - heading "Amazon Photos" [level=5] [ref=e1284]
+              - generic [ref=e1285]:
+                - text: Unlimited Photo Storage
+                - text: Free With Prime
+          - listitem [ref=e1286]
+          - listitem [ref=e1287]:
+            - link "Prime Video Direct Video Distribution Made Easy" [ref=e1288] [cursor=pointer]:
+              - /url: https://videodirect.amazon.com/home/landing
+              - heading "Prime Video Direct" [level=5] [ref=e1289]
+              - generic [ref=e1290]:
+                - text: Video Distribution
+                - text: Made Easy
+          - listitem [ref=e1291]
+          - listitem [ref=e1292]:
+            - link "Shopbop Designer Fashion Brands" [ref=e1293] [cursor=pointer]:
+              - /url: https://www.shopbop.com
+              - heading "Shopbop" [level=5] [ref=e1294]
+              - generic [ref=e1295]:
+                - text: Designer
+                - text: Fashion Brands
+        - list [ref=e1296]:
+          - listitem [ref=e1297]:
+            - link "Amazon Resale Great Deals on Quality Used Products" [ref=e1298] [cursor=pointer]:
+              - /url: /gp/browse.html?node=10158976011&ref_=footer_wrhsdls
+              - heading "Amazon Resale" [level=5] [ref=e1299]
+              - generic [ref=e1300]:
+                - text: Great Deals on
+                - text: Quality Used Products
+          - listitem [ref=e1301]
+          - listitem [ref=e1302]:
+            - link "Whole Foods Market America’s Healthiest Grocery Store" [ref=e1303] [cursor=pointer]:
+              - /url: https://www.wholefoodsmarket.com
+              - heading "Whole Foods Market" [level=5] [ref=e1304]
+              - generic [ref=e1305]:
+                - text: America’s Healthiest
+                - text: Grocery Store
+          - listitem [ref=e1306]
+          - listitem [ref=e1307]:
+            - link "Woot! Deals and Shenanigans" [ref=e1308] [cursor=pointer]:
+              - /url: https://www.woot.com/
+              - heading "Woot!" [level=5] [ref=e1309]
+              - generic [ref=e1310]:
+                - text: Deals and
+                - text: Shenanigans
+          - listitem [ref=e1311]
+          - listitem [ref=e1312]:
+            - link "Zappos Shoes & Clothing" [ref=e1313] [cursor=pointer]:
+              - /url: https://www.zappos.com
+              - heading "Zappos" [level=5] [ref=e1314]
+              - generic [ref=e1315]:
+                - text: Shoes &
+                - text: Clothing
+          - listitem [ref=e1316]
+          - listitem [ref=e1317]:
+            - link "Ring Smart Home Security Systems" [ref=e1318] [cursor=pointer]:
+              - /url: https://ring.com
+              - heading "Ring" [level=5] [ref=e1319]
+              - generic [ref=e1320]:
+                - text: Smart Home
+                - text: Security Systems
+          - listitem [ref=e1321]
+          - listitem [ref=e1322]:
+            - link "eero WiFi Stream 4K Video in Every Room" [ref=e1323] [cursor=pointer]:
+              - /url: https://eero.com/
+              - heading "eero WiFi" [level=5] [ref=e1324]
+              - generic [ref=e1325]:
+                - text: Stream 4K Video
+                - text: in Every Room
+          - listitem [ref=e1326]
+          - listitem [ref=e1327]:
+            - link "Blink Smart Security for Every Home" [ref=e1328] [cursor=pointer]:
+              - /url: https://blinkforhome.com/?ref=nav_footer
+              - heading "Blink" [level=5] [ref=e1329]
+              - generic [ref=e1330]:
+                - text: Smart Security
+                - text: for Every Home
+        - list [ref=e1331]:
+          - listitem [ref=e1332]
+          - listitem [ref=e1333]
+          - listitem [ref=e1334]
+          - listitem [ref=e1335]
+          - listitem [ref=e1336]:
+            - link "Neighbors App Real-Time Crime & Safety Alerts" [ref=e1337] [cursor=pointer]:
+              - /url: https://shop.ring.com/pages/neighbors-app
+              - heading "Neighbors App" [level=5] [ref=e1338]
+              - generic [ref=e1339]:
+                - text: Real-Time Crime
+                - text: "& Safety Alerts"
+          - listitem [ref=e1340]
+          - listitem [ref=e1341]:
+            - link "PillPack Pharmacy Simplified" [ref=e1342] [cursor=pointer]:
+              - /url: https://www.pillpack.com
+              - heading "PillPack" [level=5] [ref=e1343]
+              - generic [ref=e1344]: Pharmacy Simplified
+          - listitem [ref=e1345]
+          - listitem [ref=e1346]:
+            - link "Amazon Renewed Refurbished tech you can trust" [ref=e1347] [cursor=pointer]:
+              - /url: /gp/browse.html?node=12653393011&ref_=footer_usrenew
+              - heading "Amazon Renewed" [level=5] [ref=e1348]
+              - generic [ref=e1349]:
+                - text: Refurbished tech
+                - text: you can trust
+          - listitem [ref=e1350]
+          - listitem [ref=e1351]
+          - listitem [ref=e1352]
+          - listitem [ref=e1353]
+    - generic [ref=e1354]:
+      - list [ref=e1355]:
+        - listitem [ref=e1356]:
+          - link "Conditions of Use" [ref=e1357] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=508088&ref_=footer_cou
+        - listitem [ref=e1358]:
+          - link "Privacy Notice" [ref=e1359] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ&ref_=footer_privacy
+        - listitem [ref=e1360]:
+          - link "Consumer Health Data Privacy Disclosure" [ref=e1361] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?ie=UTF8&nodeId=TnACMrGVghHocjL8KB&ref_=footer_consumer_health_data_privacy
+        - listitem [ref=e1362]:
+          - link "Your Ads Privacy Choices" [ref=e1363] [cursor=pointer]:
+            - /url: /privacyprefs?ref_=footer_iba
+        - listitem [ref=e1364]
+      - generic [ref=e1366]: © 1996-2026, Amazon.com, Inc. or its affiliates
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | import { HomePage } from '../page-objects/HomePage';
+  3  | import { SearchResultsPage } from '../page-objects/SearchResultsPage';
+  4  | import { ProductPage } from '../page-objects/ProductPage';
+  5  | 
+  6  | test('should search for WWE 2K26 Digital Code and add to cart', async ({ page }) => {
+  7  |   const homePage = new HomePage(page);
+  8  |   const searchResultsPage = new SearchResultsPage(page);
+  9  |   const productPage = new ProductPage(page);
+  10 | 
+  11 |   await test.step('Navigate to Amazon.com', async () => {
+  12 |     await homePage.navigate('/');
+  13 |     await homePage.handleBotCheck();
+  14 |   });
+  15 | 
+  16 |   await test.step('Handle International Shipping Alert', async () => {
+  17 |     // Attempts to close the regional popup within 2s, silently ignores if not present
+  18 |     try {
+  19 |       await page.getByRole('button', { name: /dismiss/i }).first().click({ timeout: 2000 });
+  20 |     } catch {
+  21 |     }
+  22 |   });
+  23 | 
+  24 |   await test.step('Search for the product', async () => {
+  25 |     await homePage.searchFor('WWE 2K26 Digital Code');
+  26 |   });
+  27 | 
+  28 |   await test.step('Open the first organic search result', async () => {
+  29 |     await searchResultsPage.openFirstResult();
+  30 |   });
+  31 | 
+  32 |   await test.step('Add the product to the shopping cart', async () => {
+  33 |     await productPage.addToCart();
+  34 |   });
+  35 | 
+  36 |   await test.step('Verify success', async () => {
+> 37 |     expect(true).toBe(false);
+     |                  ^ Error: expect(received).toBe(expected) // Object.is equality
+  38 |   });
+  39 | });
+```
