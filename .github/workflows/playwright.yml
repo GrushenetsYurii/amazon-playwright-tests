@@ -55,7 +55,8 @@ jobs:
           const walk = (suite) => {
             if (suite.specs) {
               suite.specs.forEach(spec => {
-                const hasFailure = spec.tests.some(t => t.results && t.results.some(r => r.status === 'failed' || r.status === 'timedOut'));
+                // Перевіряємо фінальний результат тесту, а не проміжну спробу
+                const hasFailure = spec.tests.some(t => t.outcome === 'unexpected');
                 if (hasFailure) failedTitles.push(spec.title);
               });
             }
@@ -63,7 +64,9 @@ jobs:
           };
           if (report.suites) report.suites.forEach(walk);
           
-          const failedNames = failedTitles.length > 0 ? failedTitles.slice(0, 5).join(', ') : 'None';
+          let failedNames = failedTitles.length > 0 ? failedTitles.slice(0, 5).join(', ') : 'None';
+          // Екрануємо подвійні лапки та перенесення рядків, щоб не зламати JSON у Slack
+          failedNames = failedNames.replace(/\"/g, '\\\"').replace(/\n/g, ' ');
           
           fs.appendFileSync(process.env.GITHUB_ENV, 'TOTAL_TESTS=' + total + '\n');
           fs.appendFileSync(process.env.GITHUB_ENV, 'PASSED_TESTS=' + passed + '\n');
@@ -83,7 +86,7 @@ jobs:
         errors: true
         payload: |
           {
-            "channel": "U05PS4AUYLA",
+            "channel": "U04C9LLHL69",
             "attachments": [
               {
                 "color": "${{ env.FAILED_TESTS != '0' && '#a30200' || '#2eb886' }}",
