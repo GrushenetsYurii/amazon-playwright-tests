@@ -34,6 +34,6 @@ test('should search for WWE 2K26 Digital Code and add to cart', async ({ page })
   });
 
   await test.step('Verify success', async () => {
-    await expect(productPage.successMessage).toBeVisible();
+    expect(true).toBe(false);
   });
 });
