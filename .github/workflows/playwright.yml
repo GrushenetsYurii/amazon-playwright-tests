@@ -69,7 +69,6 @@ jobs:
           const walk = (suite) => {
             if (suite.specs) {
               suite.specs.forEach(spec => {
-                // Перевіряємо фінальний результат тесту, а не проміжну спробу
                 const hasFailure = spec.tests.some(t => t.status === 'unexpected');
                 if (hasFailure) failedTitles.push(spec.title);
               });
@@ -79,7 +78,6 @@ jobs:
           if (report.suites) report.suites.forEach(walk);
           
           let failedNames = failedTitles.length > 0 ? failedTitles.slice(0, 5).join(', ') : 'None';
-          // Екрануємо подвійні лапки та перенесення рядків, щоб не зламати JSON у Slack
           failedNames = failedNames.replace(/\"/g, '\\\"').replace(/\n/g, ' ');
           
           fs.appendFileSync(process.env.GITHUB_ENV, 'TOTAL_TESTS=' + total + '\n');

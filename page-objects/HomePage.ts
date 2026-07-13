@@ -14,12 +14,21 @@ export class HomePage extends BasePage {
   }
 
   async handleBotCheck() {
+    // Amazon may render an interstitial before the homepage search UI.
+    await Promise.race([
+      this.searchInput.waitFor({ state: 'visible', timeout: 5000 }).catch(() => {}),
+      this.continueShoppingButton.waitFor({ state: 'visible', timeout: 5000 }).catch(() => {}),
+    ]);
+
     if (await this.continueShoppingButton.isVisible()) {
       await this.continueShoppingButton.click();
     }
+
+    await this.searchInput.waitFor({ state: 'visible', timeout: 15000 });
   }
 
   async searchFor(text: string) {
+    await this.handleBotCheck();
     await this.searchInput.fill(text);
     await this.searchButton.click();
   }
