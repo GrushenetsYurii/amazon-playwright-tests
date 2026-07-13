@@ -56,7 +56,7 @@ jobs:
             if (suite.specs) {
               suite.specs.forEach(spec => {
                 // Перевіряємо фінальний результат тесту, а не проміжну спробу
-                const hasFailure = spec.tests.some(t => t.outcome === 'unexpected');
+                const hasFailure = spec.tests.some(t => t.status === 'unexpected');
                 if (hasFailure) failedTitles.push(spec.title);
               });
             }
